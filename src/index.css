@@ -1,0 +1,26 @@
+:root {
+  --main-bg-color_dark: #5D3EDE;
+  --main-bg-color_light: #876AFD;
+  --sec-bg-color: #00ECAA;
+  --main-font-color: #120D26;
+  --sec-font-color: #F4F4FE;
+  --contrast-font-color: #668BE9;
+}
+
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+
+.event-item_location{
+  color: #2B2849;
+  font-size: 13px;
+  font-weight: 100;
+}
+
