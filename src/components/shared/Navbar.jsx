@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import style from './Navbar.module.css';
 
 import compass from '../../assets/img/compass.svg';
@@ -15,10 +15,11 @@ import plus from '../../assets/img/plus.svg';
 function Navbar() {
   return (
     <>
+      <Outlet />
       <nav className={style.nav}>
         <div className={style.content}>
           <div className={style.sideWrapper}>
-            <NavLink to={'/'} className={style.link}>
+            <NavLink to={'/explore'} className={style.link}>
               {({ isActive }) => (
                 <div
                   className={
@@ -29,30 +30,22 @@ function Navbar() {
                     src={isActive ? compassSelected : compass}
                     alt="Explore"
                   />
-                  <p
-                    className={
-                      style.text + ' ' + (isActive ? style.selected : '')
-                    }
-                  >
-                    Explore
-                  </p>
+                  <p className={style.text}>Explore</p>
                 </div>
               )}
             </NavLink>
-            <NavLink to={'/events'} className={style.link}>
+            <NavLink to={'/event'} className={style.link}>
               {({ isActive }) => (
-                <div className={style.linkItem}>
+                <div
+                  className={
+                    style.linkItem + ' ' + (isActive ? style.selected : '')
+                  }
+                >
                   <img
                     src={isActive ? CalenderSelected : Calender}
                     alt="events"
                   />
-                  <p
-                    className={
-                      style.text + ' ' + (isActive ? style.selected : '')
-                    }
-                  >
-                    Events
-                  </p>
+                  <p className={style.text}>Events</p>
                 </div>
               )}
             </NavLink>
@@ -60,32 +53,28 @@ function Navbar() {
           <div className={style.sideWrapper}>
             <NavLink to={'/search'} className={style.link}>
               {({ isActive }) => (
-                <div className={style.linkItem}>
+                <div
+                  className={
+                    style.linkItem + ' ' + (isActive ? style.selected : '')
+                  }
+                >
                   <img src={isActive ? searchSelected : search} alt="Search" />
-                  <p
-                    className={
-                      style.text + ' ' + (isActive ? style.selected : '')
-                    }
-                  >
-                    Search
-                  </p>
+                  <p className={style.text}>Search</p>
                 </div>
               )}
             </NavLink>
-            <NavLink to={'/profile'} className={style.link}>
+            <NavLink to={`/profile/`} className={style.link}>
               {({ isActive }) => (
-                <div className={style.linkItem}>
+                <div
+                  className={
+                    style.linkItem + ' ' + (isActive ? style.selected : '')
+                  }
+                >
                   <img
                     src={isActive ? profileSelected : profile}
                     alt="Profile"
                   />
-                  <p
-                    className={
-                      style.text + ' ' + (isActive ? style.selected : '')
-                    }
-                  >
-                    Profile
-                  </p>
+                  <p className={style.text}>Profile</p>
                 </div>
               )}
             </NavLink>
