@@ -1,0 +1,42 @@
+.mainButtonDiv {
+  display: flex;
+  /* box-shadow: 0px 8px 30px 0px #5d3ede1a; */
+  fill: #5d3ede;
+  filter: drop-shadow(0px 8px 30px rgba(93, 62, 222, 0.1));
+}
+
+.mainButton {
+  background-color: var(--main-bg-color_dark);
+  width: 271px;
+  height: 58px;
+  border-radius: 15px;
+  border: none;
+  height: 100%;
+}
+
+.mainButtonText {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  padding-left: 20px;
+  margin-right: 60px;
+  margin-left: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
+.arrowIcon {
+  margin-right: 14px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+/* .buttonDiv {
+  padding: 20px;
+  padding-left: 54px;
+  padding-right: 54px;
+} */

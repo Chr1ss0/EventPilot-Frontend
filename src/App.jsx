@@ -4,6 +4,7 @@ import Protected from './components/shared/Protected';
 import SplashScreenPage from './components/pages/SplashScreenPage.jsx';
 import SignInPage from './components/pages/SignInPage';
 
+
 function App() {
   return (
     <BrowserRouter>
