@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import EventPage from './components/pages/EventPage';
 import Protected from './components/shared/Protected';
+import Navbar from './components/shared/Navbar.jsx';
 import SplashScreenPage from './components/pages/SplashScreenPage.jsx';
 import SignInPage from './components/pages/SignInPage';
-
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <Route path="/event" element={<EventPage />} />
         </Route>
       </Routes>
+      <Navbar />
     </BrowserRouter>
   );
 }

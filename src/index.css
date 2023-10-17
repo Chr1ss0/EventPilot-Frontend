@@ -5,7 +5,7 @@
   --main-font-color: #120d26;
   --sec-font-color: #f4f4fe;
   --contrast-font-color: #668be9;
-}
+
 @font-face {
   font-family: 'Inter';
   src: url("./assets/fonts/InterVariableFont.ttf");
@@ -17,4 +17,3 @@
   box-sizing: border-box;
   font-family: 'Inter';
 }
-
