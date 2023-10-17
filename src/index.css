@@ -1,17 +1,14 @@
 :root {
-  --main-bg-color_dark: #5D3EDE;
-  --main-bg-color_light: #876AFD;
-  --sec-bg-color: #00ECAA;
-  --main-font-color: #120D26;
-  --sec-font-color: #F4F4FE;
-  --contrast-font-color: #668BE9;
+  --main-bg-color_dark: #5d3ede;
+  --main-bg-color_light: #876afd;
+  --sec-bg-color: #00ecaa;
+  --main-font-color: #120d26;
+  --sec-font-color: #f4f4fe;
+  --contrast-font-color: #668be9;
 }
 
-
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
