@@ -6,12 +6,15 @@
   --sec-font-color: #F4F4FE;
   --contrast-font-color: #668BE9;
 }
+@font-face {
+  font-family: 'Inter';
+  src: url("./assets/fonts/InterVariableFont.ttf");
+}
 
-
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Inter';
 }
-
 
