@@ -50,16 +50,20 @@
 input {
   border: 0px;
 }
-.button-container{
+
+.formulaPage-container{
   display: flex;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  padding: 38px; 
+  flex-direction: column;
+  min-height: 100vh;
 }
-.button-container p {
-  font-weight:100 ;
+
+.button-container{
+  margin-top: auto;
+  padding: 0 52px 0 52px;
+}
+.switch-container{
+  margin-top: 20px;
+  margin-bottom: 38px;
+  text-align: center;
+  font-weight: 100;
 }
