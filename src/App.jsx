@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SplashScreenPage />} />
         <Route path="/signin" element={<SignInPage />} />
-
+        <Route path="/profile" element={<ProfilePage />} />
         <Route element={<Navbar />}>
           <Route path="/explore" element={<ExplorePage />} />
           <Route path="/search" element={<SearchPage />} />
