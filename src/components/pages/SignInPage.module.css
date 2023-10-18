@@ -1,69 +1,84 @@
-.logo-container{
+.logo-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 30vh;
-  color: #5D3EDE;
+  margin-bottom: 32px;
+  color: #5d3ede;
 }
-.logo-container h1 span{
-  color: #00ECAA;
+.logo-container h1 span {
+  color: #00ecaa;
 }
-.logo-container h1{
+.logo-container h1 {
   font-weight: 500;
-
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
   padding: 0 29px 0;
+  flex-grow: 1;
 }
-.form-container h2{
-    font-size: 24px;
-    /* padding-bottom: 20px; */
-    font-weight: 500;
+.form-container h2 {
+  font-size: 1.5rem;
+  /* padding-bottom: 20px; */
+  font-weight: 500;
+  height: 100%;
 }
 
 .inputDiv {
   display: flex;
   flex-shrink: 0;
   padding: 15px 10px;
-  margin: 15px 0;
-  border:0;
+  margin-bottom: 15px;
+  border: 0;
   border-radius: 10px;
-  box-shadow: 0px 8px 30px 0px rgba(93, 62, 222, 0.10);
-  color:--10 #848484d8 ;
+  box-shadow: 0px 8px 30px 0px rgba(93, 62, 222, 0.1);
+  color: --10 #848484d8;
 }
-.inputDiv :placeholder-shown{
+.inputDiv :placeholder-shown {
   font-weight: 100;
 }
-
 
 .inputDiv img {
   margin-right: 10px;
 }
-.inputDiv a {
+.inputDiv button {
   margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 input {
   border: 0px;
 }
 
-.formulaPage-container{
+.formulaPage-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.button-container{
+.button-container {
   margin-top: auto;
-  padding: 0 52px 0 52px;
 }
-.switch-container{
+.switch-container {
   margin-top: 20px;
   margin-bottom: 38px;
   text-align: center;
   font-weight: 100;
+}
+
+.backButton-wrapper {
+  padding-left: 28px;
+  padding-top: 36px;
+  margin-bottom: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  flex-grow: 1;
 }
