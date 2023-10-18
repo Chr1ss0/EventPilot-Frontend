@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 import passwordHidden from '../../assets/img/Hidden.svg';
 import passwordShown from '../../assets/img/Shown.svg';
+import BackButton from '../ui/BackButton.jsx';
 
 function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
