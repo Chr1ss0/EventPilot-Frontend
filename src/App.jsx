@@ -7,6 +7,7 @@ import SignInPage from './components/pages/SignInPage';
 import ExplorePage from './components/pages/ExplorePage.jsx';
 import SearchPage from './components/pages/SearchPage.jsx';
 import ProfilePage from './components/pages/ProfilePage.jsx';
+import SignUpPage from './components/pages/SignUpPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SplashScreenPage />} />
         <Route path="/signin" element={<SignInPage />} />
+        <Route path='/signup' element={<SignUpPage />} />
 
         <Route element={<Navbar />}>
           <Route path="/explore" element={<ExplorePage />} />

@@ -21,7 +21,7 @@
 }
 .form-container h2{
     font-size: 24px;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
     font-weight: 500;
 }
 
@@ -29,12 +29,14 @@
   display: flex;
   flex-shrink: 0;
   padding: 15px 10px;
-  margin: 5px 0;
+  margin: 15px 0;
   border:0;
   border-radius: 10px;
   box-shadow: 0px 8px 30px 0px rgba(93, 62, 222, 0.10);
   color:--10 #848484d8 ;
-  font-weight: 80;
+}
+.inputDiv :placeholder-shown{
+  font-weight: 100;
 }
 
 
@@ -57,4 +59,7 @@ input {
   width: 100%;
   text-align: center;
   padding: 38px; 
+}
+.button-container p {
+  font-weight:100 ;
 }
