@@ -3,7 +3,7 @@ import MainButton from '../ui/MainButton.jsx';
 
 function SignInPage() {
   return (
-    <div>
+    <div className={styles['formulaPage-container']}>
 
       {/* BACK BUTTON */}
 
@@ -36,9 +36,12 @@ function SignInPage() {
         </form>
       </div>
       <div className={styles['button-container']}>
-
-        <MainButton showArrow={false}>sign in </MainButton>
-        <p>Don't have an account? <a href="/signup"> Sign-Up</a></p> <p></p>
+      <div className={styles['button-signin']}>
+      <MainButton showArrow={true}>sign in </MainButton>
+      </div>
+      <div className={styles['switch-container']}>
+        <p>Don't have an account? <a href="/signup"> Sign-Up</a></p>
+      </div>
       </div>
     </div>
   );

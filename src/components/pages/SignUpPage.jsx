@@ -1,8 +1,10 @@
 import styles from "./SignInPage.module.css";
+import MainButton from '../ui/MainButton.jsx';
+
 
 function SignUpPage() {
   return(
-  <div>
+  <div  className={styles['formulaPage-container']}>
 
       {/* BACK BUTTON */}
 
@@ -11,7 +13,7 @@ function SignUpPage() {
         <h1>Event<span>Pilot</span></h1>
       </div>
       <div className={styles['form-container']}>
-        <h2>Sign in</h2>
+        <h2>Sign up</h2>
         <form action="">
         <div className={styles['inputDiv']}>
           <img src="src/assets/img/Name.svg" alt="Name" />
@@ -40,10 +42,12 @@ function SignUpPage() {
         </form>
       </div>
       <div className={styles['button-container']}>
-
-          {/* /---MAINBUTTON---/ */}
-
-        <p>Already have an account? <a href="/signin"> Sign-In</a></p> <p></p>
+      <div className={styles['button-signin']}>
+      <MainButton showArrow={true}>sign up </MainButton>
+      </div>
+      <div className={styles['switch-container']}>
+        <p>Already have an account? <a href="/signin"> Sign-In</a></p>
+      </div>
       </div>
   </div>
   )

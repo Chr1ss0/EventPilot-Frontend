@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 import styles from './MainButton.module.css';
 import ArrowIcon from '../../assets/img/Arrow.svg';
 
