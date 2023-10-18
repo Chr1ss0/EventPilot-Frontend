@@ -12,6 +12,7 @@
   border-radius: 15px;
   border: none;
   width: 100%;
+  cursor: pointer;
 }
 
 .mainButtonText {
