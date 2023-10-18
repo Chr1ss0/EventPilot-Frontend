@@ -14,6 +14,7 @@
   font-weight: 500;
 }
 
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -30,7 +31,11 @@
 .inputDiv {
   display: flex;
   flex-shrink: 0;
+  padding: 20px 10px;
+  /*
+  margin: 15px 0;
   padding: 15px 10px;
+  */
   margin-bottom: 15px;
   border: 0;
   border-radius: 10px;
@@ -84,3 +89,50 @@ input {
   margin-top: 15px;
   flex-grow: 1;
 }
+
+
+/* only on the /addevent Page */
+
+.addevent-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  color: #5D3EDE;
+  margin-bottom: 87px;
+}
+.addevent-container h1 span{
+  color: #00ECAA;
+}
+.addevent-container h1{
+  font-weight: 500;
+
+}
+
+/* only on /addevent and /editprofile */
+
+.aboutInputDiv {
+  display: flex;
+  align-items: start;
+  padding: 20px 10px ;
+  margin: 15px 0;
+  border:0;
+  border-radius: 0.625rem;
+  box-shadow: 0rem 0.5rem 1.875rem 0rem rgba(93, 62, 222, 0.10);
+  color: #848484d8 ;
+}
+
+.aboutInputDiv img {
+  margin-right: 10px;
+}
+.aboutInputDiv a {
+  margin-left: auto;
+}
+textarea{
+  flex: 1;
+  border: none;
+  padding-bottom: 120px;
+  font-weight: 100;
+}
+
