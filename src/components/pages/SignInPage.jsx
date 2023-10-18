@@ -4,7 +4,11 @@ import MainButton from '../ui/MainButton.jsx';
 function SignInPage() {
   return (
     <div>
-      <div className={styles['logo-container']}>
+
+      {/* BACK BUTTON */}
+
+      <div className={styles['logo-container']} >
+
         <img src="src/assets/img/Logo.svg" alt="Coporate Logo" />
         <h1>
           Event<span>Pilot</span>
@@ -12,13 +16,16 @@ function SignInPage() {
       </div>
       <div className={styles['form-container']}>
         <h2>Sign in</h2>
+        <form action="">
         <div className={styles['inputDiv']}>
           <img src="src/assets/img/Message.svg" alt="MAIL" />
-          <input type="email" placeholder="yourmail@email.com" />
+
+            <input type="email" placeholder="yourmail@email.com" autoComplete="username" />
         </div>
         <div className={styles['inputDiv']}>
           <img src="src/assets/img/Lock.svg" alt="LOCK" />
-          <input type="password" placeholder="password" />
+            <input type="password" placeholder="password" autoComplete="current-password"/>
+
 
           {/* on click img chnage to "Shown.svg" und Passwort wird angezeigt */}
 
@@ -26,13 +33,12 @@ function SignInPage() {
             <img src="src/assets/img/Hidden.svg" alt="HIDDEN" />
           </a>
         </div>
+        </form>
       </div>
       <div className={styles['button-container']}>
+
         <MainButton showArrow={false}>sign in </MainButton>
-        <p>
-          Don't have an account? <a href="/signuppage"> Sign-Up</a>
-        </p>{' '}
-        <p></p>
+        <p>Don't have an account? <a href="/signup"> Sign-Up</a></p> <p></p>
       </div>
     </div>
   );
