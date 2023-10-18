@@ -1,4 +1,6 @@
 import styles from './SignInPage.module.css';
+import MainButton from '../ui/MainButton.jsx';
+
 
 function AddEventPage() {
   return( 
@@ -33,7 +35,11 @@ function AddEventPage() {
     <textarea placeholder='About'></textarea>
   </div>
 </div>
-
+      <div className={styles['button-container']}>
+      <div className={styles['button-signin']}>
+      <MainButton showArrow={true}>Add </MainButton>
+      </div>
+      </div>
 </form>
   </div>
   )
