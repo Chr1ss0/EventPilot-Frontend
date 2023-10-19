@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.btnColor {
+  --bg-color: #5d3ede4d;
+  --text-color: var(--main-bg-color_dark);
+  margin-bottom: 15px;
+}

@@ -1,0 +1,15 @@
+.item {
+  --_bg-color: var(--bg-color, var(--main-bg-color_dark));
+  --_text-color: var(--text-color, white);
+  padding: 4px 10px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  background-color: var(--_bg-color);
+  /* width: fit-content; */
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  color: var(--_text-color);
+  border: none;
+}
