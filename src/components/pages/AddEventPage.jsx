@@ -10,7 +10,7 @@ function AddEventPage() {
           Add <span>Event</span>
       </h1>
     </div>
-    <form action="">
+    <form action="" className={styles['form']}>
 
 <div className={styles['form-container']}>
   <div className={styles['inputDiv']}>
