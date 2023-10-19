@@ -14,7 +14,6 @@
   font-weight: 500;
 }
 
-
 .form-container {
   display: flex;
   flex-direction: column;
@@ -40,7 +39,7 @@
   border: 0;
   border-radius: 10px;
   box-shadow: 0px 8px 30px 0px rgba(93, 62, 222, 0.1);
-  color: --10 #848484d8;
+  color: #848484d8;
 }
 .inputDiv :placeholder-shown {
   font-weight: 100;
@@ -58,6 +57,7 @@
 
 input {
   border: 0px;
+  width: 100%;
 }
 
 .formulaPage-container {
@@ -91,27 +91,24 @@ input {
   margin-top: 15px;
   flex-grow: 1;
   min-height: 70vh;
-
 }
-
 
 /* only on the /addevent Page */
 
-.addevent-container{
+.addevent-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 10vh;
-  color: #5D3EDE;
+  color: #5d3ede;
   margin-bottom: 87px;
 }
-.addevent-container h1 span{
-  color: #00ECAA;
+.addevent-container h1 span {
+  color: #00ecaa;
 }
-.addevent-container h1{
+.addevent-container h1 {
   font-weight: 500;
-
 }
 
 /* only on /addevent and /editprofile */
@@ -119,12 +116,12 @@ input {
 .aboutInputDiv {
   display: flex;
   align-items: start;
-  padding: 20px 10px ;
+  padding: 20px 10px;
   margin: 15px 0;
-  border:0;
+  border: 0;
   border-radius: 0.625rem;
-  box-shadow: 0rem 0.5rem 1.875rem 0rem rgba(93, 62, 222, 0.10);
-  color: #848484d8 ;
+  box-shadow: 0rem 0.5rem 1.875rem 0rem rgba(93, 62, 222, 0.1);
+  color: #848484d8;
 }
 
 .aboutInputDiv img {
@@ -133,10 +130,22 @@ input {
 .aboutInputDiv a {
   margin-left: auto;
 }
-textarea{
+
+textarea {
   flex: 1;
   border: none;
   padding-bottom: 120px;
   font-weight: 100;
 }
 
+.inputDiv > input[type='datetime-local']:not(:focus) {
+  font-weight: 100;
+}
+
+.inputDiv:has(input[name='startDate']) {
+  border: 2px solid var(--sec-bg-color);
+}
+
+.inputDiv:has(input[name='endDate']) {
+  border: 2px solid var(--main-bg-color_dark);
+}
