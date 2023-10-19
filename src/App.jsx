@@ -18,7 +18,6 @@ function App() {
         <Route path="/signin" element={<SignInPage />} />
         <Route path='/signup' element={<SignUpPage />} />
         <Route path='/addevent' element={<AddEventPage />} />
-
         <Route element={<Navbar />}>
           <Route path="/explore" element={<ExplorePage />} />
           <Route path="/search" element={<SearchPage />} />
