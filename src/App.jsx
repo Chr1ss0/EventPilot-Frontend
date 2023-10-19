@@ -8,16 +8,13 @@ import ExplorePage from './components/pages/ExplorePage.jsx';
 import SearchPage from './components/pages/SearchPage.jsx';
 import ProfilePage from './components/pages/ProfilePage.jsx';
 import SignUpPage from './components/pages/SignUpPage';
-import Test from './components/ui/Test.jsx';
 import AddEventPage from './components/pages/AddEventPage';
-
+import Test from './components/pages/Test.jsx';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/test" element={<Test />} />
-
         <Route path="/" element={<SplashScreenPage />} />
 
         <Route path="/signin" element={<SignInPage />} />
@@ -33,6 +30,7 @@ function App() {
             <Route path="/event" element={<EventPage />} />
           </Route>
         </Route>
+        <Route path="/test" element={<Test />} />
       </Routes>
     </BrowserRouter>
   );
