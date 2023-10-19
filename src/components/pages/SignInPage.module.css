@@ -55,9 +55,11 @@
   cursor: pointer;
 }
 
-input {
+input,
+select {
   border: 0px;
   width: 100%;
+  background-color: unset;
 }
 
 .formulaPage-container {
@@ -102,7 +104,8 @@ input {
   align-items: center;
   height: 10vh;
   color: #5d3ede;
-  margin-bottom: 87px;
+  /* margin-bottom: 87px; */
+  margin-bottom: 20px;
 }
 .addevent-container h1 span {
   color: #00ecaa;
@@ -148,4 +151,8 @@ textarea {
 
 .inputDiv:has(input[name='endDate']) {
   border: 2px solid var(--main-bg-color_dark);
+}
+
+.inputDiv > input[type='file'] {
+  display: none;
 }
