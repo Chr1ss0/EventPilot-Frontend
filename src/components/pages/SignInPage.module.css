@@ -68,6 +68,8 @@ input {
 
 .button-container {
   margin-top: auto;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 .switch-container {
   margin-top: 20px;
@@ -88,6 +90,8 @@ input {
   flex-direction: column;
   margin-top: 15px;
   flex-grow: 1;
+  min-height: 70vh;
+
 }
 
 
