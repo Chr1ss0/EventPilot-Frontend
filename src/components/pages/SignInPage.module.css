@@ -1,0 +1,142 @@
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+  margin-bottom: 32px;
+  color: #5d3ede;
+}
+.logo-container h1 span {
+  color: #00ecaa;
+}
+.logo-container h1 {
+  font-weight: 500;
+}
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 29px 0;
+  flex-grow: 1;
+}
+.form-container h2 {
+  font-size: 1.5rem;
+  /* padding-bottom: 20px; */
+  font-weight: 500;
+  height: 100%;
+}
+
+.inputDiv {
+  display: flex;
+  flex-shrink: 0;
+  padding: 20px 10px;
+  /*
+  margin: 15px 0;
+  padding: 15px 10px;
+  */
+  margin-bottom: 15px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0px 8px 30px 0px rgba(93, 62, 222, 0.1);
+  color: --10 #848484d8;
+}
+.inputDiv :placeholder-shown {
+  font-weight: 100;
+}
+
+.inputDiv img {
+  margin-right: 10px;
+}
+.inputDiv button {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  border: 0px;
+}
+
+.formulaPage-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.button-container {
+  margin-top: auto;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.switch-container {
+  margin-top: 20px;
+  margin-bottom: 38px;
+  text-align: center;
+  font-weight: 100;
+}
+
+.backButton-wrapper {
+  position: absolute;
+  padding-left: 28px;
+  padding-top: 36px;
+  margin-bottom: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  flex-grow: 1;
+  min-height: 70vh;
+
+}
+
+
+/* only on the /addevent Page */
+
+.addevent-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  color: #5D3EDE;
+  margin-bottom: 87px;
+}
+.addevent-container h1 span{
+  color: #00ECAA;
+}
+.addevent-container h1{
+  font-weight: 500;
+
+}
+
+/* only on /addevent and /editprofile */
+
+.aboutInputDiv {
+  display: flex;
+  align-items: start;
+  padding: 20px 10px ;
+  margin: 15px 0;
+  border:0;
+  border-radius: 0.625rem;
+  box-shadow: 0rem 0.5rem 1.875rem 0rem rgba(93, 62, 222, 0.10);
+  color: #848484d8 ;
+}
+
+.aboutInputDiv img {
+  margin-right: 10px;
+}
+.aboutInputDiv a {
+  margin-left: auto;
+}
+textarea{
+  flex: 1;
+  border: none;
+  padding-bottom: 120px;
+  font-weight: 100;
+}
+
