@@ -8,16 +8,23 @@ import ExplorePage from './components/pages/ExplorePage.jsx';
 import SearchPage from './components/pages/SearchPage.jsx';
 import ProfilePage from './components/pages/ProfilePage.jsx';
 import SignUpPage from './components/pages/SignUpPage';
+import Test from './components/ui/Test.jsx';
 import AddEventPage from './components/pages/AddEventPage';
+
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/test" element={<Test />} />
+
         <Route path="/" element={<SplashScreenPage />} />
+
         <Route path="/signin" element={<SignInPage />} />
-        <Route path='/signup' element={<SignUpPage />} />
-        <Route path='/addevent' element={<AddEventPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+
+        <Route path="/addevent" element={<AddEventPage />} />
+
         <Route element={<Navbar />}>
           <Route path="/explore" element={<ExplorePage />} />
           <Route path="/search" element={<SearchPage />} />

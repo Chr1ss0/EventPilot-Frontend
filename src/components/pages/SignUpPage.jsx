@@ -30,7 +30,7 @@ function SignUpPage() {
       { method: 'POST', credentials: 'include', body: formdata },
     );
 
-    if (result.ok) console.log('registered succesfull');
+    if (response.ok) console.log('registered succesfull');
     console.log(response);
     const result = await response.json();
     console.log(result);
