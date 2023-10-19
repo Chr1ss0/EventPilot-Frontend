@@ -1,11 +1,8 @@
 import { createContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 export const userContext = createContext({});
 
 function UserProvider({ children }) {
-  const navigate = useNavigate();
-
   const [user, setUser] = useState(userContext);
   const [update, setUpdate] = useState(true);
 
@@ -21,7 +18,7 @@ function UserProvider({ children }) {
       );
       // console.log(response);
       if (!response.ok) {
-        navigate('/signin');
+        return;
       }
       const result = await response.json();
       console.log(result);

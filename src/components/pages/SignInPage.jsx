@@ -27,11 +27,13 @@ function SignInPage() {
       import.meta.env.VITE_BACKEND_URL + '/api/auth/login',
       { method: 'POST', credentials: 'include', body: formdata },
     );
-
-    if (result.ok) console.log('login succesfull');
     console.log(response);
+
+    if (!response.ok) return;
+    console.log('login succesfull');
     const result = await response.json();
     console.log(result);
+    navigate('/explore');
   }
 
   return (
