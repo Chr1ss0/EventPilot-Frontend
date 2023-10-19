@@ -2,6 +2,7 @@ import styles from './ProfileButton.module.css';
 import FollowIcon from '../../assets/img/FollowButton.svg';
 import EditIcon from '../../assets/img/EditIcon.svg';
 import StarIcon from '../../assets/img/StarButton.svg';
+import LockIcon from '../../assets/img/Lock.svg';
 
 function ProfilButton({
   children,
@@ -21,6 +22,9 @@ function ProfilButton({
           )}
           {star && (
             <img className={styles.icon} src={StarIcon} alt="star icon" />
+          )}
+          {lock && (
+            <img className={styles.icon} src={LockIcon} alt="lock icon" />
           )}
           <p className={styles.profileText}>{children}</p>
         </button>

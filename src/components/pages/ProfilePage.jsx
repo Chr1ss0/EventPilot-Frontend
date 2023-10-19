@@ -4,7 +4,7 @@ function ProfilePage() {
   return (
     <>
       <div>
-        {/* edit, star, follow icon hinterlegt */}
+        {/* edit, star, follow und lock icon hinterlegt */}
         <ProfilButton edit={true}>Edit Profile</ProfilButton>
       </div>
     </>
