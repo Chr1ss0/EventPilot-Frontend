@@ -32,8 +32,15 @@ function AddEventPage() {
           </div>
           <div className={styles['inputDiv']}>
             <img src={barsIcon} alt="barsicon" />
-            <select name="category" id="category">
-              <option value=""></option>
+            <select
+              name="category"
+              id="category"
+              placeholder="Category"
+              required
+            >
+              <option value="" disabled selected hidden>
+                Category
+              </option>
               <option value="sport">Sport</option>
               <option value="music">Music</option>
               <option value="art">Art</option>

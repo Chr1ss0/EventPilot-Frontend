@@ -156,3 +156,8 @@ textarea {
 .inputDiv > input[type='file'] {
   display: none;
 }
+
+select:invalid {
+  color: #848484d8;
+  font-weight: 100;
+}
