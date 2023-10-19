@@ -6,6 +6,10 @@ import { useState } from 'react';
 
 import passwordHidden from '../../assets/img/Hidden.svg';
 import passwordShown from '../../assets/img/Shown.svg';
+import logo from '../../assets/img/Logo.svg'
+import lock from '../../assets/img/Lock.svg'
+import profile from '../../assets/img/Name.svg'
+import message from '../../assets/img/Message.svg'
 
 function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -38,7 +42,7 @@ function SignUpPage() {
         <BackButton />
       </div>
       <div className={styles['logo-container']}>
-        <img src="src/assets/img/Logo.svg" alt="Coporate Logo" />
+        <img src={logo} alt="Coporate Logo" />
         <h1>
           Event<span>Pilot</span>
         </h1>
@@ -47,19 +51,19 @@ function SignUpPage() {
         <h2>Sign up</h2>
         <form className={styles.form} onSubmit={signUp}>
           <div className={styles['inputDiv']}>
-            <img src="src/assets/img/Name.svg" alt="Name" />
+            <img src={profile} alt="Name" />
             <input type="text" placeholder="First Name" name="firstName" />
           </div>
           <div className={styles['inputDiv']}>
-            <img src="src/assets/img/Name.svg" alt="Name" />
+            <img src={profile} alt="Name" />
             <input type="text" placeholder="Last Name" name="lastName" />
           </div>
           <div className={styles['inputDiv']}>
-            <img src="src/assets/img/Message.svg" alt="MAIL" />
+            <img src={message} alt="MAIL" />
             <input type="email" placeholder="yourmail@email.com" name="email" />
           </div>
           <div className={styles['inputDiv']}>
-            <img src="src/assets/img/Lock.svg" alt="LOCK" />
+            <img src={lock} alt="LOCK" />
             <input
               type={showPassword ? 'text' : 'password'}
               name="password"

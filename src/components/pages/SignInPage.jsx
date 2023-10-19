@@ -6,6 +6,10 @@ import { useState } from 'react';
 import passwordHidden from '../../assets/img/Hidden.svg';
 import passwordShown from '../../assets/img/Shown.svg';
 import BackButton from '../ui/BackButton.jsx';
+import logo from '../../assets/img/Logo.svg'
+import mail from '../../assets/img/Message.svg'
+import lock from '../../assets/img/Lock.svg'
+
 
 function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -35,7 +39,7 @@ function SignInPage() {
   return (
     <div className={styles['formulaPage-container']}>
       <div className={styles['logo-container']}>
-        <img src="src/assets/img/Logo.svg" alt="Coporate Logo" />
+        <img src={logo} alt="Coporate Logo" />
         <h1>
           Event<span>Pilot</span>
         </h1>
@@ -44,7 +48,7 @@ function SignInPage() {
         <h2>Sign in</h2>
         <form className={styles.form} onSubmit={signIn}>
           <div className={styles['inputDiv']}>
-            <img src="src/assets/img/Message.svg" alt="MAIL" />
+            <img src={mail} alt="MAIL" />
 
             <input
               type="email"
@@ -54,7 +58,7 @@ function SignInPage() {
             />
           </div>
           <div className={styles['inputDiv']}>
-            <img src="src/assets/img/Lock.svg" alt="LOCK" />
+            <img src={lock} alt="LOCK" />
             <input
               type={showPassword ? 'text' : 'password'}
               placeholder="password"
