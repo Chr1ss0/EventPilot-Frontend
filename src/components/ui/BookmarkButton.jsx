@@ -3,7 +3,7 @@ import style from './BookmarkButton.module.css';
 import { userContext } from '../../context/userContext.jsx';
 
 function BookmarkButton({ event, darkOpacity = false }) {
-  const { user, setUser } = useContext(userContext);
+  const { user, updateUser, setUser } = useContext(userContext);
   const [favorite, setFavorite] = useState(false);
 
   useEffect(() => {
@@ -11,10 +11,17 @@ function BookmarkButton({ event, darkOpacity = false }) {
   }, []);
 
   async function bookmark() {
-    const result = await fetch(
-      import.meta.env.VITE_BACKEND_URL + '/api/user/bookmark/:event',
+    const response = await fetch(
+      import.meta.env.VITE_BACKEND_URL + `/api/user/bookmark/${event._id}`,
       { method: 'POST', credentials: true },
     );
+    console.log(response);
+    if (!response.ok) {
+      return;
+    }
+    const result = await response.json();
+    console.log(result);
+    updateUser();
   }
 
   return (
@@ -22,7 +29,8 @@ function BookmarkButton({ event, darkOpacity = false }) {
       <button
         type="button"
         className={style.button + ' ' + (darkOpacity ? style.darkOpacity : '')}
-        onClick={() => setFavorite((prev) => !prev)}
+        onClick={bookmark}
+        // onClick={() => setFavorite((prev) => !prev)}
       >
         <svg
           width="14"

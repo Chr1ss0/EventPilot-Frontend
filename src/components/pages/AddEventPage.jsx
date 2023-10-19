@@ -8,8 +8,6 @@ import imageIcon from '../../assets/img/ImageIcon.svg';
 
 function AddEventPage() {
   const currentTime = new Date();
-  const timezoneoffset = currentTime.getTimezoneOffset();
-  console.log(timezoneoffset);
   currentTime.setMinutes(
     currentTime.getMinutes() - currentTime.getTimezoneOffset() + 60,
   );
@@ -17,18 +15,33 @@ function AddEventPage() {
   currentTime.setMilliseconds(null);
   currentTime.setSeconds(null);
 
+  async function createEvent(event) {
+    event.preventDefault();
+
+    const form = new FormData(event.target);
+    console.log(form);
+
+    const response = await fetch(
+      import.meta.env.VITE_BACKEND_URL + '/api/event/create',
+      { method: 'POST', credentials: 'include', body: form },
+    );
+    console.log(response);
+    const result = await response.json();
+    console.log(result);
+  }
+
   return (
-    <div>
+    <>
       <div className={styles['addevent-container']}>
         <h1>
           Add <span>Event</span>
         </h1>
       </div>
-      <form className={styles['form']}>
+      <form onSubmit={createEvent} className={styles['form']}>
         <div className={styles['form-container']}>
           <div className={styles['inputDiv']}>
             <img src={barsIcon} alt="barsicon" />
-            <input type="text" placeholder="Event Name" />
+            <input type="text" placeholder="Event Name" name="title" />
           </div>
           <div className={styles['inputDiv']}>
             <img src={barsIcon} alt="barsicon" />
@@ -36,20 +49,21 @@ function AddEventPage() {
               name="category"
               id="category"
               placeholder="Category"
+              defaultValue=""
               required
             >
-              <option value="" disabled selected hidden>
+              <option value="" hidden>
                 Category
               </option>
-              <option value="sport">Sport</option>
-              <option value="music">Music</option>
-              <option value="art">Art</option>
-              <option value="food">Food</option>
+              <option value="Sports">Sport</option>
+              <option value="Music">Music</option>
+              <option value="Art">Art</option>
+              <option value="Food">Food</option>
             </select>
           </div>
           <div className={styles['inputDiv']}>
             <img src={locationIcon} alt="Location" />
-            <input type="text" placeholder="Location" />
+            <input type="text" placeholder="Location" name="location" />
           </div>
           <div className={styles['inputDiv']}>
             <img src={calenderIcon} alt="kalender" />
@@ -70,7 +84,7 @@ function AddEventPage() {
 
           <div className={styles['aboutInputDiv']}>
             <img src={barsIcon} alt="barsicon" />
-            <textarea placeholder="About"></textarea>
+            <textarea placeholder="About" name="description"></textarea>
           </div>
           <div className={styles['inputDiv']}>
             <img src={imageIcon} alt="file" />
@@ -79,12 +93,10 @@ function AddEventPage() {
           </div>
         </div>
         <div className={styles['button-container']}>
-          <div className={styles['button-signin']}>
-            <MainButton showArrow={true}>Add </MainButton>
-          </div>
+          <MainButton showArrow={true}>Add </MainButton>
         </div>
       </form>
-    </div>
+    </>
   );
 }
 

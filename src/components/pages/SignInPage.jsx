@@ -5,11 +5,9 @@ import { useState } from 'react';
 
 import passwordHidden from '../../assets/img/Hidden.svg';
 import passwordShown from '../../assets/img/Shown.svg';
-import BackButton from '../ui/BackButton.jsx';
-import logo from '../../assets/img/Logo.svg'
-import mail from '../../assets/img/Message.svg'
-import lock from '../../assets/img/Lock.svg'
-
+import logo from '../../assets/img/Logo.svg';
+import mail from '../../assets/img/Message.svg';
+import lock from '../../assets/img/Lock.svg';
 
 function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -29,11 +27,13 @@ function SignInPage() {
       import.meta.env.VITE_BACKEND_URL + '/api/auth/login',
       { method: 'POST', credentials: 'include', body: formdata },
     );
-
-    if (result.ok) console.log('login succesfull');
     console.log(response);
+
+    if (!response.ok) return;
+    console.log('login succesfull');
     const result = await response.json();
     console.log(result);
+    navigate('/explore');
   }
 
   return (
@@ -73,9 +73,7 @@ function SignInPage() {
             </button>
           </div>
           <div className={styles['button-container']}>
-            <div className={styles['button-signin']}>
-              <MainButton showArrow={true}>sign in</MainButton>
-            </div>
+            <MainButton showArrow={true}>sign in</MainButton>
             <div className={styles['switch-container']}>
               <p>
                 Don't have an account? <a href="/signup"> Sign-Up</a>

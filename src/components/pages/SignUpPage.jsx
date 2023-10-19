@@ -6,10 +6,10 @@ import { useState } from 'react';
 
 import passwordHidden from '../../assets/img/Hidden.svg';
 import passwordShown from '../../assets/img/Shown.svg';
-import logo from '../../assets/img/Logo.svg'
-import lock from '../../assets/img/Lock.svg'
-import profile from '../../assets/img/Name.svg'
-import message from '../../assets/img/Message.svg'
+import logo from '../../assets/img/Logo.svg';
+import lock from '../../assets/img/Lock.svg';
+import profile from '../../assets/img/Name.svg';
+import message from '../../assets/img/Message.svg';
 
 function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -29,11 +29,13 @@ function SignUpPage() {
       import.meta.env.VITE_BACKEND_URL + '/api/auth/register',
       { method: 'POST', credentials: 'include', body: formdata },
     );
-
-    if (response.ok) console.log('registered succesfull');
     console.log(response);
+
+    if (!response.ok) return;
+    console.log('registered succesfull');
     const result = await response.json();
     console.log(result);
+    navigate('/explore');
   }
 
   return (
