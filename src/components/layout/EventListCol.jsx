@@ -1,7 +1,5 @@
-import style from './EventListCol.module.css';
-
 function EventListCol({ children }) {
-  return <div className={style.col}>{children}</div>;
+  return <>{children}</>;
 }
 
 export default EventListCol;
