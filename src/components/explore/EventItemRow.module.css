@@ -1,0 +1,22 @@
+.eventContainer{
+  background: #FFF;
+  box-shadow:  0px 8px 30px 0px rgba(93, 62, 222, 0.05);
+  width: 230px;
+  height: 220px;
+  border-radius: 20px;
+  padding: 6px;
+}
+
+/* .eventContentContainer{
+  padding: 6px;
+} */
+.eventContentContainer img{
+  border-radius: 20px;
+}
+.eventDateVisitorContainer{
+  display: flex;
+  justify-content: space-between;
+}
+/* .eventRowInfoContainer{
+  padding: 0 10px;
+} */
