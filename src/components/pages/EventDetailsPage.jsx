@@ -15,6 +15,7 @@ import follow from '../../functions/follow.js';
 
 function EventDetailsPage() {
   const { user, updateUser, setUser } = useContext(userContext);
+  const [updateEvent, setUpdateEvent] = useState(false);
 
   const { id } = useParams();
   const [event, setEvent] = useState(null);
@@ -30,14 +31,27 @@ function EventDetailsPage() {
       if (!response.ok) return;
 
       const result = await response.json();
-      // console.log(result);
+      console.log(result);
       setEvent(result);
     }
     getEvent();
-  }, []);
+  }, [updateEvent]);
 
   function followHandler() {
     follow(event, updateUser);
+  }
+
+  async function registerToEvent() {
+    const response = await fetch(
+      import.meta.env.VITE_BACKEND_URL + '/api/event/register/' + event._id,
+      { method: 'POST', credentials: 'include' },
+    );
+    console.log(response);
+    const result = await response.json();
+    console.log(result);
+    if (!response.ok) return;
+    setUpdateEvent((prev) => !prev);
+    updateUser();
   }
 
   if (!event) return <></>;
@@ -131,7 +145,7 @@ function EventDetailsPage() {
           <p className={style.aboutText}>{event.eventInfo.description}</p>
         </div>
         <div className={style.registerWrapper}>
-          <MainButton>register</MainButton>
+          <MainButton onClick={registerToEvent}>register</MainButton>
         </div>
       </div>
     </main>
