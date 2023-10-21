@@ -27,45 +27,57 @@ function SignInPage() {
       import.meta.env.VITE_BACKEND_URL + '/api/auth/login',
       { method: 'POST', credentials: 'include', body: formdata },
     );
-    console.log(response);
+    // console.log(response);
 
-    if (!response.ok) return;
-    console.log('login succesfull');
     const result = await response.json();
     console.log(result);
+    if (!response.ok) return;
     navigate('/explore');
   }
 
   return (
     <div className={styles['formulaPage-container']}>
       <div className={styles['logo-container']}>
-        <img src={logo} alt="Coporate Logo" />
+        <img
+          src={logo}
+          alt='Coporate Logo'
+        />
         <h1>
           Event<span>Pilot</span>
         </h1>
       </div>
       <div className={styles['form-container']}>
         <h2>Sign in</h2>
-        <form className={styles.form} onSubmit={signIn}>
+        <form
+          className={styles.form}
+          onSubmit={signIn}>
           <div className={styles['inputDiv']}>
-            <img src={mail} alt="MAIL" />
+            <img
+              src={mail}
+              alt='MAIL'
+            />
 
             <input
-              type="email"
-              placeholder="yourmail@email.com"
-              autoComplete="username"
-              name="email"
+              type='email'
+              placeholder='yourmail@email.com'
+              autoComplete='username'
+              name='email'
             />
           </div>
           <div className={styles['inputDiv']}>
-            <img src={lock} alt="LOCK" />
+            <img
+              src={lock}
+              alt='LOCK'
+            />
             <input
               type={showPassword ? 'text' : 'password'}
-              placeholder="password"
-              autoComplete="current-password"
-              name="password"
+              placeholder='password'
+              autoComplete='current-password'
+              name='password'
             />
-            <button type="button" onClick={togglePassword}>
+            <button
+              type='button'
+              onClick={togglePassword}>
               <img
                 src={showPassword ? passwordShown : passwordHidden}
                 alt={showPassword ? 'hide password' : 'display password'}
@@ -76,7 +88,7 @@ function SignInPage() {
             <MainButton showArrow={true}>sign in</MainButton>
             <div className={styles['switch-container']}>
               <p>
-                Don't have an account? <a href="/signup"> Sign-Up</a>
+                Don't have an account? <a href='/signup'> Sign-Up</a>
               </p>
             </div>
           </div>
