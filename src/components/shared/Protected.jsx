@@ -22,5 +22,5 @@ export default function Protected() {
     validateUser();
   }, []);
 
-  return <>{validated && <Outlet />};</>;
+  return <>{validated && <Outlet />}</>;
 }

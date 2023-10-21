@@ -7,13 +7,17 @@ function BookmarkButton({ event, darkOpacity = false }) {
   const [favorite, setFavorite] = useState(false);
 
   useEffect(() => {
-    if (user.bookmarks?.includes(event._id)) setFavorite(true);
-  }, []);
+    if (user.bookmarks?.includes(event._id)) {
+      setFavorite(true);
+    } else {
+      setFavorite(false);
+    }
+  }, [user]);
 
   async function bookmark() {
     const response = await fetch(
       import.meta.env.VITE_BACKEND_URL + `/api/user/bookmark/${event._id}`,
-      { method: 'POST', credentials: true },
+      { method: 'POST', credentials: 'include' },
     );
     console.log(response);
     if (!response.ok) {
