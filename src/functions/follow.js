@@ -7,7 +7,7 @@ export default async function follow(event, updateUser) {
   );
   // console.log(response);
   const result = await response.json();
-  // console.log(result);
+  console.log(result);
   if (!response.ok) return;
   updateUser();
 }
