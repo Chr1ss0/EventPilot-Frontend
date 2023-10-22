@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import style from './BackButton.module.css';
 
-function BackButton({ white = flase }) {
+function BackButton({ white = false }) {
   const navigate = useNavigate();
 
   return (

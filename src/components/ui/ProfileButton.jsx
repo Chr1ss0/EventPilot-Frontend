@@ -8,27 +8,42 @@ function ProfilButton({
   children,
   edit = false,
   follow = false,
-  star = false,
+  review = false,
+  loggout = false,
 }) {
   return (
     <>
-      <div className={styles.buttonDiv}>
-        <button className={styles.button}>
-          {edit && (
-            <img className={styles.icon} src={EditIcon} alt="edit icon" />
-          )}
-          {follow && (
-            <img className={styles.icon} src={FollowIcon} alt="follow icon" />
-          )}
-          {star && (
-            <img className={styles.icon} src={StarIcon} alt="star icon" />
-          )}
-          {lock && (
-            <img className={styles.icon} src={LockIcon} alt="lock icon" />
-          )}
-          <p className={styles.profileText}>{children}</p>
-        </button>
-      </div>
+      <button className={styles.button}>
+        {edit && (
+          <img
+            className={styles.icon}
+            src={EditIcon}
+            alt='edit icon'
+          />
+        )}
+        {follow && (
+          <img
+            className={styles.icon}
+            src={FollowIcon}
+            alt='follow icon'
+          />
+        )}
+        {review && (
+          <img
+            className={styles.icon}
+            src={StarIcon}
+            alt='star icon'
+          />
+        )}
+        {loggout && (
+          <img
+            className={styles.icon}
+            src={LockIcon}
+            alt='lock icon'
+          />
+        )}
+        <p className={styles.profileText}>{children}</p>
+      </button>
     </>
   );
 }

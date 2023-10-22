@@ -48,7 +48,7 @@
 .inputDiv img {
   margin-right: 10px;
 }
-.inputDiv button {
+.inputDiv > button {
   margin-left: auto;
   background: none;
   border: none;
@@ -115,6 +115,39 @@ select {
 }
 
 /* only on /addevent and /editprofile */
+
+.inputLocation {
+  position: relative;
+  width: 100%;
+}
+.locationBtnsWrapper {
+  background-color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  top: 100%;
+  margin-top: 20px;
+  width: 100%;
+  z-index: 10;
+}
+
+.locationBtnsWrapper > button {
+  cursor: pointer;
+}
+
+.locationBtnsWrapper > button,
+.locationText {
+  border: none;
+  background: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 30px 0px rgba(93, 62, 222, 0.1);
+}
+.locationText {
+  color: #5d3ede;
+  box-shadow: 0px 8px 30px 0px rgba(94, 62, 222, 0.451);
+}
 
 .aboutInputDiv {
   display: flex;

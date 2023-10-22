@@ -12,6 +12,7 @@ import style from './EventDetailsPage.module.css';
 import date from '../../assets/img/Date.svg';
 import location from '../../assets/img/Location Pin.svg';
 import follow from '../../functions/follow.js';
+import RegisteredUsers from '../shared/RegisteredUsers.jsx';
 
 function EventDetailsPage() {
   const { user, updateUser, setUser } = useContext(userContext);
@@ -50,7 +51,7 @@ function EventDetailsPage() {
     const result = await response.json();
     console.log(result);
     if (!response.ok) return;
-    setUpdateEvent((prev) => !prev);
+    // setUpdateEvent((prev) => !prev);
     updateUser();
   }
 
@@ -71,7 +72,12 @@ function EventDetailsPage() {
         </div>
       </div>
       <div className={style.contentWrapper}>
-        <div className={style.registeredWrapper}>REGISTERED</div>
+        <div className={style.registeredWrapper}>
+          <RegisteredUsers
+            event={event}
+            big={true}
+          />
+        </div>
         <div className={style.contentInfoWrapper}>
           <h1 className={style.eventName}>{event.eventInfo.title}</h1>
           <div className={style.cardWrapper}>
@@ -135,7 +141,9 @@ function EventDetailsPage() {
               <button
                 onClick={followHandler}
                 className={style.followButton}>
-                Follow
+                {user.connections?.following?.includes(event.organizer._id)
+                  ? 'Unfollow'
+                  : 'Follow'}
               </button>
             </div>
           </div>
@@ -144,9 +152,11 @@ function EventDetailsPage() {
           <h2 className={style.aboutHeading}>About Event</h2>
           <p className={style.aboutText}>{event.eventInfo.description}</p>
         </div>
-        <div className={style.registerWrapper}>
-          <MainButton onClick={registerToEvent}>register</MainButton>
-        </div>
+        {event.registeredUser.some((object) => object._id === user._id) || (
+          <div className={style.registerWrapper}>
+            <MainButton onClick={registerToEvent}>register</MainButton>
+          </div>
+        )}
       </div>
     </main>
   );
