@@ -1,0 +1,16 @@
+.searchBarWrapper{
+  display: flex;
+  font-size: 20px;
+  background-color: #5D3EDE;
+  padding: 10px;
+}
+.searchBarWrapper svg{
+  margin: 5px;
+}
+.searchBarWrapper input{
+  font-size: 20px;
+  font-weight: 100;
+  color: #fff;
+  border-left: 1px solid #876AFD;
+  padding-left: 10px;
+}
