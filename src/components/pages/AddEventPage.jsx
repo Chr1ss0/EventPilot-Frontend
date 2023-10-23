@@ -24,15 +24,22 @@ function AddEventPage() {
     event.preventDefault();
 
     const form = new FormData(event.target);
-    const { 'place name': placeName, latitue, longitude, state } = locationUser;
+    const {
+      'place name': placeName,
+      latitude,
+      longitude,
+      state,
+    } = locationUser;
     const address = locationRef.current.value
       .replace(',', '-,-')
       .split('-,-')[1];
-    const locationInfo = { placeName, latitue, longitude, state, address };
 
-    form.set('location', {
-      ...locationInfo,
-    });
+    form.delete('location');
+    form.append('placeName', placeName);
+    form.append('latitude', latitude);
+    form.append('longitude', longitude);
+    form.append('state', state);
+    form.append('address', address);
     console.log(form);
 
     const response = await fetch(
