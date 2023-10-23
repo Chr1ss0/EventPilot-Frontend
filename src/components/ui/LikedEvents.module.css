@@ -1,0 +1,35 @@
+
+
+.likedEventsWrapper {
+  display: flex;
+  background-color: rgba(93, 62, 222, 0.50);
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  max-width: 295px;
+  }
+.upcomingEventsWrapper {
+  background-color: #876AFD;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.upcomingEventsWrapper p {
+  font-weight: 100;
+  color: #fff;
+  font-size: 15px;
+}
+
+.pastEventsWrapper {
+  border-radius: 10px;
+  padding: 10px;
+
+}
+
+.pastEventsWrapper p {
+  font-weight: 100;
+  color: #fff;
+  font-size: 15px;
+}
+
+

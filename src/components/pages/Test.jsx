@@ -1,8 +1,8 @@
 import React from 'react';
-import SearchInput from '../search/SearchBar.jsx'
+import LikedEvents from '../ui/LikedEvents'
 
 export default function Test() {
   return <>
-  <SearchInput></SearchInput>
+  <LikedEvents></LikedEvents>
   </>;
 }
