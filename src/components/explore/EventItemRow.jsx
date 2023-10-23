@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import titlePicture from '../../assets/img/EventImg.svg';
 import styles from './EventItemRow.module.css';
 import pin from '../../assets/img/Location.svg';
 import BookmarkButton from '../ui/BookmarkButton';
@@ -7,7 +6,7 @@ import RegisteredUsers from '../shared/RegisteredUsers.jsx';
 
 function EventItemRow({ event }) {
   const startDate = new Date(event.eventInfo.startDate);
-  console.log(startDate);
+  // console.log(startDate);
   return (
     <div>
       <div className={styles['eventContainer']}>
@@ -16,7 +15,7 @@ function EventItemRow({ event }) {
             <BookmarkButton event={event} />
           </div>
           <img
-            src={titlePicture}
+            src={event.cover.secure_url}
             alt='titlepicture'
           />
           <div className={styles['EventDateContainer']}>
