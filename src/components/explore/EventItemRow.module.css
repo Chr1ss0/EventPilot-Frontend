@@ -16,6 +16,9 @@
 }
 .eventContentContainer img {
   border-radius: 20px;
+  width: 100%;
+  object-fit: cover;
+  max-height: 130px;
 }
 .bookmarkButtonContainer {
   position: absolute;
