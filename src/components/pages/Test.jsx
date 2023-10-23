@@ -1,10 +1,11 @@
 import React from 'react';
-import ReviewItem from '../profile/ReviewItem.jsx';
+import EventItemRow from '../explore/EventItemRow';
+import ProfileInfo from '../profile/ProfileInfo';
 
 export default function Test() {
   return (
-    <>
-      <ReviewItem />
-    </>
+    <div>
+      <ProfileInfo vertical={false}></ProfileInfo>
+    </div>
   );
 }

@@ -1,4 +1,5 @@
-function RegisteredUsers() {
+function RegisteredUsers({ event, big = false }) {
+  // console.log(event.registeredUser);
   return <></>;
 }
 

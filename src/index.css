@@ -17,4 +17,20 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter';
+  color: var(--main-font-color);
+  font-weight: 500;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
 }
