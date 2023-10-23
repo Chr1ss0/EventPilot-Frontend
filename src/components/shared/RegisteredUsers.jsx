@@ -13,15 +13,14 @@ function RegisteredUsers({ event, big = false }) {
               key={user._id}
               src={user.userInfo.avatar.secure_url}
               alt=''
+              loading='lazy'
               className={style.userImage + ' ' + style[`image${index + 1}`]}
             />
           ))}
         </div>
       )}
       <p className={style.text}>
-        {event.registeredUser.length > 2
-          ? '+' + (event.registeredUser.length - 3)
-          : 0}
+        +{event.registeredUser.length}
         {big && <span className={style.text}> registered</span>}
       </p>
     </div>
