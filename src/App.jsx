@@ -22,7 +22,7 @@ function App() {
 
         <Route path="/addevent" element={<AddEventPage />} />
         <Route path="/searchpage" element={<SearchPage />} />
-          
+
         <Route element={<Navbar />}>
           <Route path="/explore" element={<ExplorePage />} />
           <Route path="/search" element={<SearchPage />} />

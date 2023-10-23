@@ -1,5 +1,4 @@
 import EventItemCol from '../shared/EventItemCol';
-import styles from './Searchpage.module.css';
 
 function SearchPage() {
   return (
