@@ -1,0 +1,155 @@
+.pageWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(255, 255, 255) 40%
+  );
+}
+
+.heroWrapper {
+  position: relative;
+  line-height: 0;
+}
+
+.heroImg {
+  width: 100%;
+  max-height: 25vh;
+  object-fit: cover;
+}
+
+.heroNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  padding: 20px 20px 0 20px;
+  align-items: center;
+}
+
+.pageTitle {
+  color: white;
+  font-size: 1.5rem;
+  margin-inline: auto;
+  line-height: 0.8;
+  padding-bottom: 2px;
+}
+
+.contentWrapper {
+  position: relative;
+  padding-top: 44px;
+  padding-inline: 20px;
+  padding-bottom: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.registeredWrapper {
+  --border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fefeff;
+  padding: 12px;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  box-shadow: 0px 8px 30px 0px rgba(93, 62, 222, 0.1);
+}
+
+.contentInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.eventName {
+  font-size: 2.25rem;
+  font-weight: 100;
+}
+
+.cardWrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.organizerContentWrapper {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.organizerHeading {
+  font-weight: 100;
+  font-size: 16px;
+}
+
+.cardImg {
+  max-width: 48px;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  object-fit: cover;
+}
+
+.cardInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  flex: 1;
+}
+
+.cardHeading {
+  font-size: 1rem;
+}
+
+.cardSubInfo {
+  font-size: 0.75rem;
+  font-weight: 100;
+  color: #747688;
+}
+
+.followButton {
+  border-radius: 4px;
+  background-color: #668be84d;
+  box-shadow: 0px 8px 20px 0px rgba(74, 210, 228, 0.08);
+  backdrop-filter: blur(14px);
+  font-size: 0.75rem;
+  font-weight: 100;
+  color: var(--main-bg-color_dark);
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.aboutWrapper {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.aboutHeading {
+  font-size: 1.125rem;
+}
+
+.aboutText {
+  font-weight: 100;
+  line-height: 1.75;
+}
+
+.registerWrapper {
+  margin-top: auto;
+  padding-inline: 40px;
+}
+
+.organizerLink {
+  text-decoration: none;
+}
