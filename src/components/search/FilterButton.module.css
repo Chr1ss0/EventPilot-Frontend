@@ -1,0 +1,16 @@
+.button {
+  display: flex;
+  border-radius: 5px;
+  padding: 5px;
+  border-style: none;
+  background-color: var(--main-bg-color_light);
+  align-items: center;
+  gap: 5px;
+}
+
+.text {
+  font-weight: 100;
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
+  color: #ffffff;
+}

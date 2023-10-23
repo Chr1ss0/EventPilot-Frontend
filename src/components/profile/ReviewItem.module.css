@@ -1,0 +1,45 @@
+.reviewOverall {
+  display: flex;
+  align-items: start;
+}
+
+.picDiv {
+  display: flex;
+  max-width: 48px;
+  line-height: 0;
+  margin-right: 15px;
+}
+
+.profilePic {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.nameDiv {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 2.125rem;
+}
+
+.dateDiv {
+  margin-left: auto;
+}
+
+.date {
+  font-weight: 100;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+  text-align: right;
+}
+
+.reviewText {
+  font-weight: 100;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+}

@@ -19,23 +19,55 @@ function App() {
     <BrowserRouter>
       <UserProvider>
         <Routes>
-          <Route path="/" element={<SplashScreenPage />} />
+          <Route
+            path='/'
+            element={<SplashScreenPage />}
+          />
 
-          <Route path="/signin" element={<SignInPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
-
+          <Route
+            path='/signin'
+            element={<SignInPage />}
+          />
+          <Route
+            path='/signup'
+            element={<SignUpPage />}
+          />
           <Route element={<Protected />}>
             <Route element={<Navbar />}>
-              <Route path="/explore" element={<ExplorePage />} />
-              <Route path="/search" element={<SearchPage />} />
-              <Route path="/user/:id" element={<ProfilePage />} />
-              <Route path="/events/own" element={<EventPage />} />
+              <Route
+                path='/explore'
+                element={<ExplorePage />}
+              />
+              <Route
+                path='/search'
+                element={<SearchPage />}
+              />
+              <Route
+                path='/user/:id'
+                element={<ProfilePage />}
+              />
+              <Route
+                path='/events/own'
+                element={<EventPage />}
+              />
             </Route>
-            <Route path="/user/:id/review" element={<ReviewPage />} />
-            <Route path="/events/details/:id" element={<EventDetailsPage />} />
-            <Route path="/addevent" element={<AddEventPage />} />
+            <Route
+              path='/user/:id/review'
+              element={<ReviewPage />}
+            />
+            <Route
+              path='/events/details/:id'
+              element={<EventDetailsPage />}
+            />
+            <Route
+              path='/addevent'
+              element={<AddEventPage />}
+            />
           </Route>
-          <Route path="/test" element={<Test />} />
+          <Route
+            path='/test'
+            element={<Test />}
+          />
         </Routes>
       </UserProvider>
     </BrowserRouter>
