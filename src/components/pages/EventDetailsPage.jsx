@@ -32,7 +32,7 @@ function EventDetailsPage() {
       if (!response.ok) return;
 
       const result = await response.json();
-      console.log(result);
+      // console.log(result);
       setEvent(result);
     }
     getEvent();
@@ -47,7 +47,7 @@ function EventDetailsPage() {
       import.meta.env.VITE_BACKEND_URL + '/api/event/register/' + event._id,
       { method: 'POST', credentials: 'include' },
     );
-    console.log(response);
+    // console.log(response);
     const result = await response.json();
     console.log(result);
     if (!response.ok) return;

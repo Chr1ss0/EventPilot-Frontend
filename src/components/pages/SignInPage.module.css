@@ -5,13 +5,12 @@
   align-items: center;
   margin-top: 64px;
   margin-bottom: 32px;
-  color: #5d3ede;
 }
 .logo-container h1 span {
   color: #00ecaa;
 }
 .logo-container h1 {
-  font-weight: 500;
+  color: #5d3ede;
 }
 
 .form-container {
@@ -47,6 +46,7 @@
 
 .inputDiv img {
   margin-right: 10px;
+  margin-left: 10px;
 }
 .inputDiv > button {
   margin-left: auto;
@@ -70,14 +70,23 @@ select {
 
 .button-container {
   margin-top: auto;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 .switch-container {
   margin-top: 20px;
   margin-bottom: 38px;
   text-align: center;
+}
+
+.switch-container p {
   font-weight: 100;
+}
+
+.switch-container a {
+  color: var(--main-bg-color_dark);
+  text-decoration: none;
+  font-weight: inherit;
 }
 
 .backButton-wrapper {
@@ -93,6 +102,7 @@ select {
   margin-top: 15px;
   flex-grow: 1;
   min-height: 70vh;
+  padding-bottom: 48px;
 }
 
 /* only on the /addevent Page */
@@ -170,7 +180,10 @@ select {
 textarea {
   flex: 1;
   border: none;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
+}
+
+textarea:placeholder-shown {
   font-weight: 100;
 }
 
@@ -192,5 +205,9 @@ textarea {
 
 select:invalid {
   color: #848484d8;
+  font-weight: 100;
+}
+
+label {
   font-weight: 100;
 }

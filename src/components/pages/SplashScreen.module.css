@@ -1,12 +1,18 @@
 .splash-screen {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(to bottom, #876AFD, #44ABD4);
+  background: linear-gradient(to bottom, #876afd, #44abd4);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #5D3EDE;
 }
+
+.splash-screen h1 {
+  color: #5d3ede;
+  font-weight: 700;
+}
+
 .splash-screen span {
-color: #00ECAA;
+  color: #00ecaa;
+  font-weight: 700;
 }

@@ -86,7 +86,7 @@
 
 .organizerHeading {
   font-weight: 100;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .cardImg {
@@ -141,12 +141,13 @@
 }
 
 .aboutText {
+  --line-height: 1.75;
   font-weight: 100;
-  line-height: 1.75;
+  line-height: var(--line-height);
 }
 
 .registerWrapper {
-  margin-top: auto;
+  margin-top: 16px;
   padding-inline: 40px;
 }
 

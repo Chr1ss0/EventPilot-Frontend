@@ -62,6 +62,7 @@ function SignInPage() {
               placeholder='yourmail@email.com'
               autoComplete='username'
               name='email'
+              required
             />
           </div>
           <div className={styles['inputDiv']}>
@@ -74,6 +75,7 @@ function SignInPage() {
               placeholder='password'
               autoComplete='current-password'
               name='password'
+              required
             />
             <button
               type='button'

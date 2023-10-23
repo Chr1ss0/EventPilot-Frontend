@@ -22,19 +22,19 @@ function SignUpPage() {
 
   async function signUp(event) {
     event.preventDefault();
+    // console.log('signup triggered');
 
     const formdata = new FormData(event.target);
+    // console.log(formdata);
 
     const response = await fetch(
       import.meta.env.VITE_BACKEND_URL + '/api/auth/register',
       { method: 'POST', credentials: 'include', body: formdata },
     );
-    console.log(response);
-
-    if (!response.ok) return;
-    console.log('registered succesfull');
+    // console.log(response);
     const result = await response.json();
     console.log(result);
+    if (!response.ok) return;
     navigate('/explore');
   }
 
@@ -44,35 +44,66 @@ function SignUpPage() {
         <BackButton />
       </div>
       <div className={styles['logo-container']}>
-        <img src={logo} alt="Coporate Logo" />
+        <img
+          src={logo}
+          alt='Coporate Logo'
+        />
         <h1>
           Event<span>Pilot</span>
         </h1>
       </div>
       <div className={styles['form-container']}>
         <h2>Sign up</h2>
-        <form className={styles.form} onSubmit={signUp}>
+        <form
+          className={styles.form}
+          onSubmit={signUp}>
           <div className={styles['inputDiv']}>
-            <img src={profile} alt="Name" />
-            <input type="text" placeholder="First Name" name="firstName" />
+            <img
+              src={profile}
+              alt='Name'
+            />
+            <input
+              type='text'
+              placeholder='First Name'
+              name='firstName'
+            />
           </div>
           <div className={styles['inputDiv']}>
-            <img src={profile} alt="Name" />
-            <input type="text" placeholder="Last Name" name="lastName" />
+            <img
+              src={profile}
+              alt='Name'
+            />
+            <input
+              type='text'
+              placeholder='Last Name'
+              name='lastName'
+            />
           </div>
           <div className={styles['inputDiv']}>
-            <img src={message} alt="MAIL" />
-            <input type="email" placeholder="yourmail@email.com" name="email" />
+            <img
+              src={message}
+              alt='MAIL'
+            />
+            <input
+              type='email'
+              placeholder='yourmail@email.com'
+              name='email'
+            />
           </div>
           <div className={styles['inputDiv']}>
-            <img src={lock} alt="LOCK" />
+            <img
+              src={lock}
+              alt='LOCK'
+            />
             <input
               type={showPassword ? 'text' : 'password'}
-              name="password"
-              placeholder="password"
-              autoComplete="new-password"
+              name='password'
+              placeholder='password'
+              autoComplete='new-password'
             />
-            <button type="button" onClick={togglePassword}>
+            <button
+              type='button'
+              onClick={togglePassword}>
               <img
                 src={showPassword ? passwordShown : passwordHidden}
                 alt={showPassword ? 'hide password' : 'display password'}
@@ -85,7 +116,7 @@ function SignUpPage() {
             </div>
             <div className={styles['switch-container']}>
               <p>
-                Already have an account? <a href="/signin"> Sign-In</a>
+                Already have an account? <a href='/signin'> Sign-In</a>
               </p>
             </div>
           </div>
