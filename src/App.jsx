@@ -32,7 +32,6 @@ function App() {
             path='/signup'
             element={<SignUpPage />}
           />
-
           <Route element={<Protected />}>
             <Route element={<Navbar />}>
               <Route
