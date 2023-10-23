@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import EventListCol from '../layout/EventListCol.jsx';
 import EventItemCol from '../shared/EventItemCol.jsx';
-import style from './Searchpage.module.css';
+import style from './SearchPage.module.css';
 
 function SearchPage() {
   const [events, setEvents] = useState([]);
