@@ -1,8 +1,8 @@
 import React from 'react';
-import SearchInput from '../search/SearchBar.jsx'
+import FilterMenuTime from '../search/FilterMenuTime'
 
 export default function Test() {
   return <>
-  <SearchInput></SearchInput>
+  <FilterMenuTime></FilterMenuTime>
   </>;
 }
