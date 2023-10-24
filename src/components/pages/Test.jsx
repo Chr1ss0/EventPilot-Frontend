@@ -1,8 +1,8 @@
 import React from 'react';
-import FilterMenuTime from '../search/FilterMenuTime'
+import CurrentLocation from '../shared/CurrentLocation'
 
 export default function Test() {
   return <>
-  <FilterMenuTime></FilterMenuTime>
+  <CurrentLocation></CurrentLocation>
   </>;
 }
