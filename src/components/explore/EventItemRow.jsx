@@ -1,40 +1,52 @@
-import titlePicture from '../../assets/img/EventImg.svg'
-import styles from './EventItemRow.module.css'
-import pin from '../../assets/img/Location.svg'
-import BookmarkButton from '../ui/BookmarkButton'
+import { Link } from 'react-router-dom';
+import styles from './EventItemRow.module.css';
+import pin from '../../assets/img/Location.svg';
+import BookmarkButton from '../ui/BookmarkButton';
+import RegisteredUsers from '../shared/RegisteredUsers.jsx';
 
-
-function EventItemRow() {
+function EventItemRow({ event }) {
+  const startDate = new Date(event.eventInfo.startDate);
+  // console.log(startDate);
   return (
-  <div>
-    <div className={styles['eventContainer']}>
-      <div className={styles['eventContentContainer']}>
-        <div className={styles['bookmarkButtonContainer']}>
-          <BookmarkButton/>
-        </div>
-        <img src={titlePicture} alt="titlepicture" />
+    <div>
+      <div className={styles['eventContainer']}>
+        <div className={styles['eventContentContainer']}>
+          <div className={styles['bookmarkButtonContainer']}>
+            <BookmarkButton event={event} />
+          </div>
+          <img
+            src={event.cover.secure_url}
+            alt='titlepicture'
+            loading='lazy'
+          />
           <div className={styles['EventDateContainer']}>
-            <p>18 <span>July</span></p>
-            {/* Date Lgoic */}
+            <p>
+              {startDate.getDate()}{' '}
+              <span>
+                {startDate.toLocaleString(undefined, { month: 'short' })}
+              </span>
+            </p>
           </div>
-      </div>
-          <div className={styles['eventRowInfoContainerWraper']}>
-            <h4>Lorem Ipsum Party</h4>
-              <div className={styles['eventPlaceVisitorContainer']}>
-                <p>99+</p>
-                {/* Visitors Logic */}
-                <div className={styles['eventPlaceContainer']}>
-                  <img src={pin} alt="Pin" />
-                  <p>Lorem, Place</p>
-                  {/* Place Logic */}
-                </div>
-              </div>
+        </div>
+        <Link
+          to={`/events/details/${event._id}`}
+          className={styles['eventRowInfoContainerWraper']}>
+          <h4>{event.eventInfo.title}</h4>
+          <div className={styles['eventPlaceVisitorContainer']}>
+            <RegisteredUsers event={event} />
+            <div className={styles['eventPlaceContainer']}>
+              <img
+                src={pin}
+                alt='Pin'
+              />
+              <p>{event.eventInfo.location.placeName}</p>
+            </div>
           </div>
-        <div>
+        </Link>
+        <div></div>
       </div>
     </div>
-  </div>
-  )
+  );
 }
 
 export default EventItemRow;

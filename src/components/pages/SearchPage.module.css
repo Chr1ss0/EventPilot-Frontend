@@ -1,3 +1,8 @@
 .pageWrapper {
-  margin-bottom: 80px;
+  margin-bottom: 100px;
+}
+
+.contentWrapper {
+  /* remove bottom padding if looking to empty */
+  padding: 12px 20px 12px 28px;
 }

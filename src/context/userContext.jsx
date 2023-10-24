@@ -16,7 +16,7 @@ function UserProvider({ children }) {
         import.meta.env.VITE_BACKEND_URL + '/api/user/data',
         { credentials: 'include' },
       );
-      console.log(response);
+      // console.log(response);
       const result = await response.json();
       console.log(result);
       if (!response.ok) {

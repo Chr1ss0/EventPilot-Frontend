@@ -12,9 +12,9 @@ function SearchPage() {
         import.meta.env.VITE_BACKEND_URL + '/api/event/all',
         { credentials: 'include' },
       );
-      console.log(response);
+      // console.log(response);
       const result = await response.json();
-      console.log(result);
+      // console.log(result);
 
       if (!response.ok) return;
       setEvents(result);
@@ -23,14 +23,16 @@ function SearchPage() {
   }, []);
   return (
     <div className={style.pageWrapper}>
-      <EventListCol>
-        {events.map((event) => (
-          <EventItemCol
-            key={event._id}
-            event={event}
-          />
-        ))}
-      </EventListCol>
+      <div className={style.contentWrapper}>
+        <EventListCol>
+          {events.map((event) => (
+            <EventItemCol
+              key={event._id}
+              event={event}
+            />
+          ))}
+        </EventListCol>
+      </div>
     </div>
   );
 }

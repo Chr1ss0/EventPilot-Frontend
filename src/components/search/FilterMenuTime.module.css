@@ -1,0 +1,49 @@
+.headlineWrapper p{
+  color:#1F1F1F;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 34px;
+}
+
+.filterDayWrapper{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.filterDay{
+  padding:9px 19px 9px 19px;
+  border: 1px solid #E6E6E6;
+  border-radius: 5px;
+}
+.filterDay p{
+  color: #807A7A;
+  font-weight: 100;
+  font-size: 15px;
+}
+.filterDayActive{
+  padding: 9px;
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 5px;
+  background-color: #5D3EDE;
+}
+.filterDayActive p{
+  color: #fff;
+  font-weight: 100;
+  font-size: 15px;
+}
+.DateWrapper {
+  max-width: 240px;
+  text-align: center;
+}
+.DateWrapper input[type="date"] {
+  padding: 8px;
+  border: 1px solid #E6E6E6;
+  border-radius: 5px;
+}
+
+.DateWrapper input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
