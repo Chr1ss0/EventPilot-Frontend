@@ -1,34 +1,63 @@
-
-
 .likedEventsWrapper {
   display: flex;
-  background-color: rgba(93, 62, 222, 0.50);
+  background-color: rgba(93, 62, 222, 0.5);
   border-radius: 10px;
   padding: 5px;
-  max-width: 295px;
-  }
+  /* max-width: 295px; */
+}
 .upcomingEventsWrapper {
-  background-color: #876AFD;
+  background-color: #876afd;
   border-radius: 10px;
   padding: 10px;
+  border-style: none;
+  width: 50%;
+  margin-right: auto;
+  font-weight: 100;
+  color: #fff;
+  font-size: 0.9375rem;
 }
 
 .upcomingEventsWrapper p {
   font-weight: 100;
   color: #fff;
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .pastEventsWrapper {
+  background-color: #876afd;
   border-radius: 10px;
   padding: 10px;
+  border-style: none;
+  width: 50%;
+  font-weight: 100;
+  color: #fff;
+  font-size: 0.9375rem;
+}
 
+.left {
+  width: 50%;
+  background-color: transparent;
+  border-style: none;
+  font-weight: 100;
+  color: #fff;
+  font-size: 0.9375rem;
+  padding: 10px;
+  margin-right: auto;
+}
+
+.right {
+  width: 50%;
+  background-color: transparent;
+  border-style: none;
+  font-weight: 100;
+  color: #fff;
+  font-size: 0.9375rem;
+  padding: 10px;
+  margin-left: auto;
 }
 
 .pastEventsWrapper p {
   font-weight: 100;
   color: #fff;
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
-
-
