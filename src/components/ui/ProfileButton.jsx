@@ -5,15 +5,18 @@ import StarIcon from '../../assets/img/StarButton.svg';
 import LockIcon from '../../assets/img/Lock.svg';
 
 function ProfilButton({
-  children,
+  onClick,
   edit = false,
   follow = false,
   review = false,
   loggout = false,
+  children,
 }) {
   return (
     <>
-      <button className={styles.button}>
+      <button
+        onClick={onClick}
+        className={styles.button}>
         {edit && (
           <img
             className={styles.icon}

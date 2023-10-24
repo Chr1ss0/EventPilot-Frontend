@@ -17,6 +17,7 @@ function EventItemRow({ event }) {
           <img
             src={event.cover.secure_url}
             alt='titlepicture'
+            loading='lazy'
           />
           <div className={styles['EventDateContainer']}>
             <p>
