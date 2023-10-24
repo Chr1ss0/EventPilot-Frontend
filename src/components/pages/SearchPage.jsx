@@ -23,14 +23,16 @@ function SearchPage() {
   }, []);
   return (
     <div className={style.pageWrapper}>
-      <EventListCol>
-        {events.map((event) => (
-          <EventItemCol
-            key={event._id}
-            event={event}
-          />
-        ))}
-      </EventListCol>
+      <div className={style.contentWrapper}>
+        <EventListCol>
+          {events.map((event) => (
+            <EventItemCol
+              key={event._id}
+              event={event}
+            />
+          ))}
+        </EventListCol>
+      </div>
     </div>
   );
 }

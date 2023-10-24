@@ -75,7 +75,7 @@ select {
 }
 .switch-container {
   margin-top: 20px;
-  margin-bottom: 38px;
+  /* margin-bottom: 38px; */
   text-align: center;
 }
 

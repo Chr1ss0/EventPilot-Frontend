@@ -61,6 +61,8 @@
   font-weight: 500;
   font-size: 1.125rem;
   margin-top: 15px;
+  white-space: nowrap;
+  overflow: clip;
 }
 
 .eventPlaceVisitorContainer {
@@ -90,4 +92,7 @@
   font-weight: 100;
   line-height: normal;
   color: #716e90;
+  white-space: nowrap;
+  max-width: 90px;
+  overflow: clip;
 }
