@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 export default function Protected() {
+  const { pathname } = useLocation();
+
   const [validated, setValidated] = useState(false);
   const navigate = useNavigate();
 
@@ -13,14 +15,13 @@ export default function Protected() {
       );
       // console.log(response);
 
-      if (!response.ok) navigate('/signin');
-
       const result = await response.json();
       console.log(result);
+      if (!response.ok) navigate('/signin');
       setValidated(true);
     }
     validateUser();
-  }, []);
+  }, [pathname]);
 
   return <>{validated && <Outlet />}</>;
 }

@@ -1,21 +1,29 @@
-import styles from './ProfileInfo.module.css'
-import ProfilePicture from '../../assets/img/PinkGuyProfilePicture.jpg'
+import styles from './ProfileInfo.module.css';
+import ProfilePicture from '../../assets/img/PinkGuyProfilePicture.jpg';
 
-function ProfileInfo({vertical=false}) {
+function ProfileInfo({ user, vertical = false }) {
   return (
-  <div className={styles['ProfileInfoWrapper']+' ' + (vertical && styles['VerticalProfile'])} >
-    <img src={ProfilePicture} alt="profilepicture" />
-    <div className={styles['ProfileFollowerSection']}>
-      <div className={styles['ProfileFollowning']}>
-        <p>100</p>
-        <p>Following</p>
-      </div>
-      <div className={styles['ProfileFollower']}>
-        <p>1500</p>
-        <p>Followers</p>
+    <div
+      className={
+        styles['ProfileInfoWrapper'] +
+        ' ' +
+        (vertical && styles['VerticalProfile'])
+      }>
+      <img
+        src={user.userInfo.avatar.secure_url}
+        alt='profilepicture'
+      />
+      <div className={styles['ProfileFollowerSection']}>
+        <div className={styles['ProfileFollowning']}>
+          <p>{user.connections.following.length}</p>
+          <p>Following</p>
+        </div>
+        <div className={styles['ProfileFollower']}>
+          <p>{user.connections.followers.length}</p>
+          <p>Followers</p>
+        </div>
       </div>
     </div>
-  </div>
   );
 }
 

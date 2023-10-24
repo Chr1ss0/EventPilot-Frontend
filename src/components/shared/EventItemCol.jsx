@@ -5,7 +5,7 @@ import LocationIcon from '../../assets/img/Location.svg';
 import { Link } from 'react-router-dom';
 
 function EventItemCol({ event }) {
-  console.log(event);
+  // console.log(event);
   const startDate = new Date(event.eventInfo.startDate);
   const startDateDisplay = startDate.toLocaleString(undefined, {
     dateStyle: 'medium',
