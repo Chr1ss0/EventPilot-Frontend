@@ -1,8 +1,8 @@
 import React from 'react';
-import LikedEvents from '../ui/LikedEvents'
+import FilterMenuTime from '../search/FilterMenuTime'
 
 export default function Test() {
   return <>
-  <LikedEvents></LikedEvents>
+  <FilterMenuTime></FilterMenuTime>
   </>;
 }

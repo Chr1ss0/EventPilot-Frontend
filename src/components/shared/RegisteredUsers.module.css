@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  align-items: center;
+}
+
+.small {
+  --imgSize: 26px;
+  --fontSize: 0.75rem;
+}
+
+.big {
+  --imgSize: 36px;
+  --fontSize: 1rem;
+}
+
+.imagesWrapper {
+  line-height: 0;
+}
+
+.userImage {
+  max-width: var(--imgSize);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid white;
+  position: relative;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image1 {
+  margin-left: calc(var(--imgSize) / 3 * 0 * -1);
+  z-index: 3;
+}
+
+.image2 {
+  margin-left: calc(var(--imgSize) / 3 * 1 * -1);
+  z-index: 2;
+}
+
+.image3 {
+  margin-left: calc(var(--imgSize) / 3 * 1 * -1);
+  z-index: 1;
+}
+
+.text {
+  font-size: var(--fontSize);
+  color: var(--contrast-font-color);
+}
