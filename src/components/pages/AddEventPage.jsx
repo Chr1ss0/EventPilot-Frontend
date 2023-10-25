@@ -6,6 +6,7 @@ import locationIcon from '../../assets/img/Location.svg';
 import calenderIcon from '../../assets/img/Calender.svg';
 import imageIcon from '../../assets/img/ImageIcon.svg';
 import { useEffect, useRef, useState } from 'react';
+import BackButton from '../ui/BackButton.jsx';
 
 function AddEventPage() {
   const [locationUser, setLocationUser] = useState(null);
@@ -85,9 +86,11 @@ function AddEventPage() {
   return (
     <>
       <div className={styles['addevent-container']}>
+        <BackButton />
         <h1>
           Add <span>Event</span>
         </h1>
+        <div>{/*don't delete for alignment*/}</div>
       </div>
       <form
         onSubmit={createEvent}
