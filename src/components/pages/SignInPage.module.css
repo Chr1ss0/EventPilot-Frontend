@@ -177,7 +177,7 @@ select {
   margin-left: auto;
 }
 
-textarea {
+.aboutInputDiv > textarea {
   flex: 1;
   border: none;
   padding-bottom: 100px;

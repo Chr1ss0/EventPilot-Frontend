@@ -1,10 +1,14 @@
 import { createContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export const userContext = createContext({});
+export const userContext = createContext(null);
 
 function UserProvider({ children }) {
   const [user, setUser] = useState(userContext);
+  const [hasUser, setHasUser] = useState(false);
   const [update, setUpdate] = useState(true);
+
+  const navigate = useNavigate();
 
   function updateUser() {
     setUpdate((prev) => !prev);
@@ -19,6 +23,10 @@ function UserProvider({ children }) {
       // console.log(response);
       const result = await response.json();
       console.log(result);
+      if (result.message === 'Token invalid.') {
+        navigate('/signin');
+      }
+      setHasUser(true);
       if (!response.ok) {
         return;
       }
@@ -29,7 +37,7 @@ function UserProvider({ children }) {
 
   return (
     <userContext.Provider value={{ user, updateUser, setUser }}>
-      {children}
+      {hasUser && children}
     </userContext.Provider>
   );
 }

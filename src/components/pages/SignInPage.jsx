@@ -1,16 +1,18 @@
 import styles from './SignInPage.module.css';
 import MainButton from '../ui/MainButton.jsx';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import passwordHidden from '../../assets/img/Hidden.svg';
 import passwordShown from '../../assets/img/Shown.svg';
 import logo from '../../assets/img/Logo.svg';
 import mail from '../../assets/img/Message.svg';
 import lock from '../../assets/img/Lock.svg';
+import { userContext } from '../../context/userContext.jsx';
 
 function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const { updateUser } = useContext(userContext);
 
   function togglePassword() {
     setShowPassword((prev) => !prev);
@@ -32,6 +34,8 @@ function SignInPage() {
     const result = await response.json();
     console.log(result);
     if (!response.ok) return;
+
+    updateUser();
     navigate('/explore');
   }
 

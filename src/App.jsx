@@ -13,6 +13,7 @@ import Test from './components/pages/Test.jsx';
 import UserProvider from './context/userContext.jsx';
 import EventDetailsPage from './components/pages/EventDetailsPage.jsx';
 import ReviewPage from './components/pages/ReviewPage.jsx';
+import ProfileEditPage from './components/pages/ProfileEditPage.jsx';
 
 function App() {
   return (
@@ -54,6 +55,10 @@ function App() {
             <Route
               path='/user/:id/review'
               element={<ReviewPage />}
+            />
+            <Route
+              path='/profile/edit'
+              element={<ProfileEditPage />}
             />
             <Route
               path='/events/details/:id'
