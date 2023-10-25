@@ -10,22 +10,43 @@ import FilterMenu from '../search/FilterMenu.jsx';
 
 function SearchPage() {
   const [events, setEvents] = useState([]);
+  const [filters, setFilters] = useState({
+    title: '',
+    category: '',
+    startDate: '',
+    location: '',
+    latitude: '',
+    longitude: '',
+  });
 
   useEffect(() => {
+    const filtersEmpty = Object.values(filters).every((cur) => '' === cur);
+    const filterQuery = Object.entries(filters)
+      .map((entry) => `${entry[0]}=${entry[1]}`)
+      .join('&');
+
+    let url;
+    if (filtersEmpty) {
+      url = `${import.meta.env.VITE_BACKEND_URL}/api/event/all`;
+    } else {
+      url = `${
+        import.meta.env.VITE_BACKEND_URL
+      }/api/event/filtered?${filterQuery}`;
+    }
+    console.log({ url });
+
     async function getEvents() {
-      const response = await fetch(
-        import.meta.env.VITE_BACKEND_URL + '/api/event/all',
-        { credentials: 'include' },
-      );
+      const response = await fetch(url, { credentials: 'include' });
       // console.log(response);
       const result = await response.json();
-      // console.log(result);
+      console.log(result);
 
       if (!response.ok) return;
       setEvents(result);
     }
     getEvents();
-  }, []);
+  }, [filters]);
+
   return (
     <div className={style.pageWrapper}>
       <article className={style.upper}>
@@ -36,7 +57,10 @@ function SearchPage() {
             <FilterButton />
           </div>
           <div className={style.bar}>
-            <FilterBar />
+            <FilterBar
+              filter={filters}
+              setFilters={setFilters}
+            />
           </div>
         </div>
       </article>

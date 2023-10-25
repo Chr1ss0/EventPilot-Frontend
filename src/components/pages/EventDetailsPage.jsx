@@ -138,13 +138,21 @@ function EventDetailsPage() {
                   }>{`${event.organizer.userInfo.firstName} ${event.organizer.userInfo.lastName}`}</h3>
                 <p className={style.cardSubInfo}>Organizer</p>
               </Link>
-              <button
-                onClick={followHandler}
-                className={style.followButton}>
-                {user.connections?.following?.includes(event.organizer._id)
-                  ? 'Unfollow'
-                  : 'Follow'}
-              </button>
+              {user.id !== event.organizer._id && (
+                <button
+                  onClick={followHandler}
+                  className={
+                    style.followButton +
+                    ' ' +
+                    (user.connections?.following?.includes(event.organizer._id)
+                      ? style.followButtonActive
+                      : '')
+                  }>
+                  {user.connections?.following?.includes(event.organizer._id)
+                    ? 'Followed'
+                    : 'Follow'}
+                </button>
+              )}
             </div>
           </div>
         </div>

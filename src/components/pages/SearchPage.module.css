@@ -9,6 +9,7 @@
 .searchLine {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-right: 30px;
   margin-top: 24px;
   margin-bottom: 24px;

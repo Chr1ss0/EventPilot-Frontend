@@ -1,57 +1,70 @@
-.filterBarWraper{
+.filterBarWraper {
   display: flex;
   justify-content: space-between;
   gap: 10px;
   max-width: 300px;
 }
-.filterBarWraper svg{
+.filterBarWraper svg {
   padding-right: 3px;
 }
-.filterBarWraper p{
+.filterBarWraper p {
   font-weight: 100;
 }
-.musicWrapper{
+.buttonWrapper {
+  --_bg-color: var(--bg-color, #876afd);
+  --_text-color: var(--text-color, #fff);
   display: flex;
   align-items: center;
-  background-color: #00ECAA;
+  background-color: var(--_bg-color);
   border-radius: 5px;
   padding: 10px;
-  justify-content: space-evenly;
+  gap: 8px;
+  /* justify-content: space-evenly; */
+  border: none;
 }
 
-.artWrapper{
+.buttonWrapper p {
+  color: var(--_text-color);
+}
+
+.active {
+  --bg-color: #00ecaa;
+  --text-color: #1f1f1f;
+}
+
+/* .artWrapper {
   display: flex;
   align-items: center;
-  background-color: #876AFD;
+  background-color: #876afd;
   border-radius: 5px;
   padding: 10px;
   justify-content: space-evenly;
 }
-.artWrapper p{
+.artWrapper p {
   color: #fff;
 }
 
-.sportsWrapper{
+.sportsWrapper {
   display: flex;
   align-items: center;
-  background-color: #876AFD;
+  background-color: #876afd;
   border-radius: 5px;
   padding: 10px;
   justify-content: space-evenly;
 }
-.sportsWrapper p{
+.sportsWrapper p {
   color: #fff;
 }
 
-.foodWrapper{
+.foodWrapper {
   display: flex;
   align-items: center;
-  background-color: #876AFD;
+  background-color: #876afd;
   border-radius: 5px;
   padding: 10px;
   justify-content: space-evenly;
   color: #fff;
 }
-.foodWrapper p{
+.foodWrapper p {
   color: #fff;
-}
+} */
