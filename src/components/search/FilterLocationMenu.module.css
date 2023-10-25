@@ -1,0 +1,16 @@
+import { useState } from 'react';
+
+export default function FilterLocationMenu() {
+  const [searchLocation, setSearchLocation] = useState({
+    place: 'Stadt',
+    state: 'Bundesland',
+  });
+  return (
+    <div>
+      <div>Svg</div>
+      <p>{`${searchLocation.place}, ${searchLocation.state}`}</p>
+      <div>Arrow</div>
+      <div>UserImg</div>
+    </div>
+  );
+}
