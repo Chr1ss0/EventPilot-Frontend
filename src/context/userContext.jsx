@@ -1,10 +1,11 @@
 import { createContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const userContext = createContext(null);
 
 function UserProvider({ children }) {
   const [user, setUser] = useState(userContext);
+  const { pathname } = useLocation();
   const [hasUser, setHasUser] = useState(false);
   const [update, setUpdate] = useState(true);
 
@@ -23,7 +24,11 @@ function UserProvider({ children }) {
       // console.log(response);
       const result = await response.json();
       console.log(result);
-      if (result.message === 'Token invalid.') {
+      if (
+        result.message === 'Token invalid.' &&
+        pathname !== '/signup' &&
+        pathname !== '/signin'
+      ) {
         navigate('/signin');
       }
       setHasUser(true);
