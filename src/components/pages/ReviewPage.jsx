@@ -5,6 +5,8 @@ import { userContext } from '../../context/userContext.jsx';
 import ProfileInfo from '../profile/ProfileInfo.jsx';
 import MainButton from '../ui/MainButton.jsx';
 import Rating from '../ui/Rating.jsx';
+import style from './ReviewPage.module.css';
+import star from '../../assets/img/starGrey.svg';
 
 function ReviewPage() {
   const { id } = useParams();
@@ -47,42 +49,52 @@ function ReviewPage() {
   if (!profile) return;
 
   return (
-    <div>
-      <div>
-        <BackButton />
-        <h1>
-          Review {`${profile.userInfo.firstName} ${profile.userInfo.lastName}`}
-        </h1>
-      </div>
-      <div>
-        <ProfileInfo
-          vertical={false}
-          user={profile}
-        />
-      </div>
-      <div>
-        <Rating
-          rating={rating}
-          setRating={setRating}
-        />
-      </div>
-      <form onSubmit={review}>
+    <>
+      <article className={style.upper}>
+        <div className={style.top}>
+          <BackButton />
+          <h1>
+            Review{' '}
+            {`${profile.userInfo.firstName} ${profile.userInfo.lastName}`}
+          </h1>
+        </div>
         <div>
-          <img
-            src=''
-            alt=''
+          <ProfileInfo
+            vertical={false}
+            user={profile}
           />
-          <textarea
-            name='content'
-            id=''
-            cols='30'
-            rows='10'></textarea>
         </div>
-        <div>
-          <MainButton>Submit</MainButton>
+      </article>
+      <article className={style.middle}>
+        <div className={style.rating}>
+          <Rating
+            rating={rating}
+            setRating={setRating}
+          />
         </div>
-      </form>
-    </div>
+        <form
+          className={style.form}
+          onSubmit={review}>
+          <div className={style.textInput}>
+            <img
+              className={style.greyStar}
+              src={star}
+              alt='greystar Icon'
+            />
+            <textarea
+              placeholder='Your Review'
+              className={style.textArea}
+              name='content'
+              id=''
+              cols='150'
+              rows='18'></textarea>
+          </div>
+          <div>
+            <MainButton>Submit</MainButton>
+          </div>
+        </form>
+      </article>
+    </>
   );
 }
 
