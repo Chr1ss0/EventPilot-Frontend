@@ -7,7 +7,8 @@ function BookmarkButton({ event, darkOpacity = false }) {
   const [favorite, setFavorite] = useState(false);
 
   useEffect(() => {
-    if (user.bookmarks?.includes(event._id)) {
+    if (user.bookmarks.some((object) => object._id === event._id)) {
+      // if (user.bookmarks?.includes(event._id)) {
       setFavorite(true);
     } else {
       setFavorite(false);

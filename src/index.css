@@ -17,7 +17,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter';
-  color: var(--main-font-color);
   font-weight: 500;
 }
 
@@ -26,6 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
+  color: var(--main-font-color);
 }
 
 #root {
@@ -33,4 +33,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
+}
+
+textarea,
+input {
+  color: inherit;
 }

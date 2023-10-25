@@ -9,6 +9,7 @@ import ReviewItem from '../profile/ReviewItem.jsx';
 import InterestList from '../layout/InterestList.jsx';
 import InterestItem from '../profile/InterestItem.jsx';
 import style from './ProfilePage.module.css';
+import EventItemCol from '../shared/EventItemCol.jsx';
 
 function ProfilePage() {
   const { id } = useParams();
@@ -16,7 +17,6 @@ function ProfilePage() {
   const [profile, setProfile] = useState(null);
   const [tab, setTab] = useState('about');
   const navigate = useNavigate();
-  console.log({ user });
 
   useEffect(() => {
     async function getProfile() {
@@ -27,7 +27,7 @@ function ProfilePage() {
       const result = await response.json();
       if (!response.ok) return console.error(result);
       if (result.message === 'Token invalid.') return navigate('/signin');
-      console.log(result);
+      // console.log(result);
       setProfile(result);
     }
     getProfile();
@@ -49,6 +49,10 @@ function ProfilePage() {
     navigate(`/user/${id}/review`);
   }
 
+  function editProfile() {
+    navigate('/profile/edit');
+  }
+
   async function logout() {
     const response = await fetch(
       import.meta.env.VITE_BACKEND_URL + `/api/user/logout`,
@@ -57,8 +61,8 @@ function ProfilePage() {
     console.log(response);
     const result = await response.json();
     if (!response.ok) return console.error(result.message);
-    if (result.message === 'Token invalid.') return navigate('/signin');
     console.log(result);
+    navigate('/signin');
   }
 
   if (!profile) return;
@@ -82,7 +86,7 @@ function ProfilePage() {
         <div className={style.buttonsWrapper}>
           {/* edit, star, follow und lock icon hinterlegt */}
           <ProfilButton
-            onClick={follow}
+            onClick={editProfile}
             edit={true}>
             Edit Profile
           </ProfilButton>
@@ -98,7 +102,9 @@ function ProfilePage() {
           <ProfilButton
             onClick={follow}
             follow={true}>
-            Follow
+            {user.connections.following.includes(profile._id)
+              ? 'Unfollow'
+              : 'Follow'}
           </ProfilButton>
           <ProfilButton
             onClick={review}
@@ -155,11 +161,21 @@ function ProfilePage() {
             </div>
           </>
         ) : tab === 'events' ? (
-          <EventListCol></EventListCol>
+          <EventListCol>
+            {profile.createdEvents.map((event) => (
+              <EventItemCol
+                event={event}
+                key={event._id}
+              />
+            ))}
+          </EventListCol>
         ) : tab === 'reviews' ? (
           <EventListCol>
             {profile.reviews.map((review) => (
-              <ReviewItem key={review._id} />
+              <ReviewItem
+                key={review._id}
+                review={review}
+              />
             ))}
           </EventListCol>
         ) : (

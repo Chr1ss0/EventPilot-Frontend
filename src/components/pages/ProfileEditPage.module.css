@@ -1,0 +1,93 @@
+.pageWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px 20px;
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.userName {
+  font-size: 1.5rem;
+}
+
+.profileImageWrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.profileImage {
+  max-width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profileImageButton {
+  position: relative;
+}
+
+.profileEditIcon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.fileInput {
+  display: none;
+}
+
+.aboutInputDiv {
+  display: flex;
+  align-items: start;
+  padding: 20px 10px;
+  margin-bottom: 15px;
+  border: 0;
+  border-radius: 0.625rem;
+  box-shadow: 0rem 0.5rem 1.875rem 0rem rgba(93, 62, 222, 0.1);
+  color: #848484d8;
+}
+
+.aboutInputDiv > img {
+  margin-inline: 10px;
+}
+
+.aboutInputDiv > textarea {
+  flex: 1;
+  border: none;
+}
+
+.aboutToping {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aboutHeading {
+  font-size: 1.125rem;
+}
+
+/* .aboutMeText {
+  font-size: 1rem;
+  font-weight: 100;
+  line-height: 1.5rem;
+} */
+
+.submitWrapper {
+  margin-top: auto;
+  padding-inline: 24px;
+}

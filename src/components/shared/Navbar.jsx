@@ -16,7 +16,7 @@ import { userContext } from '../../context/userContext.jsx';
 
 function Navbar() {
   const { user, updateUser, setUser } = useContext(userContext);
-  console.log(user._id);
+
   return (
     <>
       <Outlet />
