@@ -11,10 +11,11 @@ import { useNavigate } from 'react-router-dom';
 
 function SearchPage() {
   const navigate = useNavigate();
+  const [filterMenu, setFilterMenu] = useState(false);
   const [events, setEvents] = useState([]);
   const [filters, setFilters] = useState({
     title: '',
-    category: 'Food',
+    category: '',
     startDate: '',
     location: '',
     latitude: '',
@@ -56,7 +57,7 @@ function SearchPage() {
           <CurrentLocation light={false}></CurrentLocation>
           <div className={style.searchLine}>
             <SearchBar />
-            <FilterButton />
+            <FilterButton onClick={() => setFilterMenu((prev) => !prev)} />
           </div>
           <div className={style.bar}>
             <FilterBar
@@ -67,6 +68,7 @@ function SearchPage() {
         </div>
       </article>
       <FilterMenu
+        display={filterMenu}
         filters={filters}
         setFilters={setFilters}
       />

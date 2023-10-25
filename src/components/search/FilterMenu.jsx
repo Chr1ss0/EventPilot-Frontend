@@ -5,9 +5,9 @@ import FilterMenuTime from './FilterMenuTime.jsx';
 
 import style from './FilterMenu.module.css';
 
-function FilterMenu({ filters, setFilters }) {
+function FilterMenu({ filters, setFilters, display = false }) {
   return (
-    <div className={style.wrapper}>
+    <div className={style.wrapper + ' ' + (display ? style.active : '')}>
       <h2 className={style.mainHeading}>Filter</h2>
       <div className={style.sectionWrapper}>
         <div className={style.section}>
