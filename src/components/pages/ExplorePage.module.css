@@ -1,30 +1,30 @@
-.explorePageWrapper{
+.explorePageWrapper {
   margin-top: 17px;
-margin-left: 20px;
+  margin-left: 20px;
 }
 
-.logoStyling{
+.logoStyling {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 220px;
   margin-bottom: 10px;
 }
-.explorePageWrapper h2{
-  font-size: 18px;
+.explorePageWrapper h2 {
+  font-size: 1.125rem;
   font-weight: 500;
   margin-bottom: 16px;
 }
-.logoStyling img{
+.logoStyling img {
   width: 32px;
   height: 29px;
 }
-.upcomingEventsWrapper{
+.upcomingEventsWrapper {
   margin-bottom: 17px;
 }
-.eventListRowWrapper{
+.eventListRowWrapper {
   margin-bottom: 29px;
 }
-.eventListColWrapper{
+.eventListColWrapper {
   margin-right: 25px;
 }

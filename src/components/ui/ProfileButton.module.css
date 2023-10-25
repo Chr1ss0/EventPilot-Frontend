@@ -1,4 +1,7 @@
 .button {
+  --_border: var(--border, 2px solid var(--main-bg-color_dark));
+  --_background: var(--background, none);
+  --_text-color: var(--text-color, var(--main-bg-color_dark));
   display: flex;
   width: 100%;
   padding-left: 35px;
@@ -6,17 +9,25 @@
   padding-top: 15px;
   padding-bottom: 15px;
   border-radius: 15px;
-  /* border: solid; */
-  border: 2px solid var(--main-bg-color_dark);
-  background: none;
+  border: var(--_border);
+  background: var(--_background);
+  cursor: pointer;
+}
+
+.following {
+  --border: 2px solid #00ecaa;
+  /* --background: #00ecaa; */
+  --text-color: #1f1f1f;
 }
 
 .icon {
   margin-right: auto;
+  width: min-content;
 }
 .profileText {
   font-weight: 100;
   text-align: center;
-  line-height: 25px;
-  color: var(--main-bg-color_dark);
+  font-size: 1rem;
+  line-height: 1.563rem;
+  color: var(--_text-color);
 }

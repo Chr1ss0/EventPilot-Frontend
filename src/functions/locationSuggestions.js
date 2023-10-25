@@ -1,4 +1,8 @@
-export default async function locationHandler(event, setLocationUser) {
+export default async function locationHandler(
+  event,
+  setLocationUser,
+  setLocations,
+) {
   if (event.target.value.length === 5) {
     const response = await fetch(
       import.meta.env.VITE_BACKEND_URL +
@@ -7,9 +11,10 @@ export default async function locationHandler(event, setLocationUser) {
     );
     // console.log(response);
     const result = await response.json();
-    console.log(result);
+    // console.log(result);
     if (!response.ok) return;
     if (result.length === 1) {
+      // console.log(result[0]);
       setLocationUser(result[0]);
     } else {
       setLocations(result);

@@ -7,12 +7,14 @@ import styles from './FilterMenuCategory.module.css';
  * @param {boolean} params.active
  * @returns
  */
-function FilterMenuCategory({ active = false, category }) {
+function FilterMenuCategory({ active = false, category, onClick }) {
   return (
     <>
       <div className={styles.test}>
         {category === 'sports' ? (
-          <button className={styles.button}>
+          <button
+            className={styles.button}
+            onClick={onClick}>
             <div
               className={
                 active ? styles.iconDivActive : styles.iconDivInactive
@@ -35,7 +37,9 @@ function FilterMenuCategory({ active = false, category }) {
             <p className={styles.text}>Sports</p>
           </button>
         ) : category === 'music' ? (
-          <button className={styles.button}>
+          <button
+            className={styles.button}
+            onClick={onClick}>
             <div
               className={
                 active ? styles.iconDivActive : styles.iconDivInactive
@@ -57,7 +61,9 @@ function FilterMenuCategory({ active = false, category }) {
             <p className={styles.text}>Music</p>
           </button>
         ) : category === 'art' ? (
-          <button className={styles.button}>
+          <button
+            className={styles.button}
+            onClick={onClick}>
             <div
               className={
                 active ? styles.iconDivActive : styles.iconDivInactive
@@ -88,7 +94,9 @@ function FilterMenuCategory({ active = false, category }) {
             <p className={styles.text}>Art</p>
           </button>
         ) : category === 'food' ? (
-          <button className={styles.button}>
+          <button
+            className={styles.button}
+            onClick={onClick}>
             <div
               className={
                 active ? styles.iconDivActive : styles.iconDivInactive

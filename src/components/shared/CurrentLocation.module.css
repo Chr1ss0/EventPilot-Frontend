@@ -7,23 +7,23 @@
 .lightCurrentLocation {
   color: #7254ee;
   font-weight: 100;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .lightTown {
   color: #5d3ede;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 0.813rem;
 }
 
 .darkCurrentLocation {
   color: white;
   font-weight: 100;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .darkTown {
   color: #ffffff;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 0.813rem;
 }

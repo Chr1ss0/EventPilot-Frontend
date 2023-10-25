@@ -1,40 +1,50 @@
-.filterLocationMenu_wrapper{
+.filterLocationMenu_wrapper {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
-.filterLocationMenu_input{
-   display: flex;
-  border: 1px solid #E5E5E5;
+
+.filterLocationMenu_input {
+  display: flex;
+  border: 1px solid #e5e5e5;
   border-radius: 5px;
   padding: 0.5rem;
-  width: 250px;
-  }
-.filterLocationMenu_usericon{
+  /* width: 250px; */
+  width: 100%;
+}
+
+.filterLocationMenu_usericon {
   width: 30px;
 }
-.filterLocationMenu_usericon_wrapper{
-  border: 1px solid #E5E5E5;
+
+.filterLocationMenu_usericon_wrapper {
+  border: 1px solid #e5e5e5;
   border-radius: 5px;
   padding: 0.5rem 1rem;
   display: flex;
-}.filterLocationMenu_usericon_wrapper:hover{
- background-color: #00ecaa;
 }
+
+.filterLocationMenu_usericon_wrapper:hover {
+  background-color: #00ecaa;
+}
+
 .filterLocationMenu_currentLocation {
   text-transform: uppercase;
   font-weight: 100;
   align-self: center;
-  color: #1F1F1F;
+  color: #1f1f1f;
   width: 50px;
   font-size: 1rem;
   display: flex;
 }
-.filterLocationMenu_cta{
+
+.filterLocationMenu_cta {
   width: 15px;
   height: 15px;
   align-self: center;
   margin-left: auto;
 }
-.filterLocationMenu_searchIcon{
+
+.filterLocationMenu_searchIcon {
   margin-right: 1rem;
 }

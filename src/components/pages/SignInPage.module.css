@@ -109,8 +109,9 @@ select {
 
 .addevent-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  padding-inline: 28px;
   align-items: center;
   height: 10vh;
   color: #5d3ede;
