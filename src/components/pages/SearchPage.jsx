@@ -2,6 +2,11 @@ import { useEffect, useState } from 'react';
 import EventListCol from '../layout/EventListCol.jsx';
 import EventItemCol from '../shared/EventItemCol.jsx';
 import style from './SearchPage.module.css';
+import CurrentLocation from '../shared/CurrentLocation.jsx';
+import SearchBar from '../search/SearchBar.jsx';
+import FilterButton from '../search/FilterButton.jsx';
+import FilterBar from '../search/FilterBar.jsx';
+import FilterMenu from '../search/FilterMenu.jsx';
 
 function SearchPage() {
   const [events, setEvents] = useState([]);
@@ -23,6 +28,15 @@ function SearchPage() {
   }, []);
   return (
     <div className={style.pageWrapper}>
+      <div>
+        <CurrentLocation />
+        <div>
+          <SearchBar />
+          <FilterButton />
+        </div>
+        <FilterBar />
+      </div>
+      <FilterMenu />
       <div className={style.contentWrapper}>
         <EventListCol>
           {events.map((event) => (

@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 import EventListRow from '../layout/EventListRow.jsx';
 import EventItemRow from '../explore/EventItemRow.jsx';
+import CurrentLocation from '../shared/CurrentLocation.jsx';
+import EventItemCol from '../shared/EventItemCol.jsx';
+import EventListCol from '../layout/EventListCol.jsx';
+
+import logo from '../../assets/img/Logo.svg';
 
 function ExplorePage() {
   const [events, setEvents] = useState([]);
@@ -20,16 +25,48 @@ function ExplorePage() {
     }
     getEvents();
   }, []);
+
   return (
     <>
-      <EventListRow>
-        {events.map((event) => (
-          <EventItemRow
-            event={event}
-            key={event._id}
-          />
-        ))}
-      </EventListRow>
+      <div>
+        <img
+          src={logo}
+          alt=''
+        />
+        <CurrentLocation />
+      </div>
+      <div>
+        <h2>Upcoming Events</h2>
+        <EventListRow>
+          {events.map((event) => (
+            <EventItemRow
+              event={event}
+              key={event._id}
+            />
+          ))}
+        </EventListRow>
+      </div>
+      <div>
+        <h2>Nearby you</h2>
+        <EventListRow>
+          {events.map((event) => (
+            <EventItemRow
+              event={event}
+              key={event._id}
+            />
+          ))}
+        </EventListRow>
+      </div>
+      <div>
+        <EventListCol>
+          {events.map((event) => (
+            <EventItemCol
+              key={event._id}
+              event={event}
+            />
+          ))}
+        </EventListCol>
+      </div>
     </>
   );
 }
