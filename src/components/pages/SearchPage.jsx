@@ -28,14 +28,18 @@ function SearchPage() {
   }, []);
   return (
     <div className={style.pageWrapper}>
-      <div>
-        <CurrentLocation />
+      <article className={style.upper}>
         <div>
-          <SearchBar />
-          <FilterButton />
+          <CurrentLocation light={false}></CurrentLocation>
+          <div className={style.searchLine}>
+            <SearchBar />
+            <FilterButton />
+          </div>
+          <div className={style.bar}>
+            <FilterBar />
+          </div>
         </div>
-        <FilterBar />
-      </div>
+      </article>
       <FilterMenu />
       <div className={style.contentWrapper}>
         <EventListCol>
