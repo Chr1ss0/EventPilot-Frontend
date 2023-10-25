@@ -25,8 +25,8 @@ function ProfilePage() {
         { credentials: 'include' },
       );
       const result = await response.json();
-      if (!response.ok) return console.error(result);
       if (result.message === 'Token invalid.') return navigate('/signin');
+      if (!response.ok) return console.error(result);
       // console.log(result);
       setProfile(result);
     }
@@ -41,6 +41,7 @@ function ProfilePage() {
     // console.log(response);
     const result = await response.json();
     console.log(result);
+    if (result.message === 'Token invalid.') return navigate('/signin');
     if (!response.ok) return;
     updateUser();
   }
@@ -60,6 +61,7 @@ function ProfilePage() {
     );
     console.log(response);
     const result = await response.json();
+
     if (!response.ok) return console.error(result.message);
     console.log(result);
     navigate('/signin');
@@ -101,9 +103,10 @@ function ProfilePage() {
           {/* edit, star, follow und lock icon hinterlegt */}
           <ProfilButton
             onClick={follow}
-            follow={true}>
+            follow={true}
+            followActive={user.connections.following.includes(profile._id)}>
             {user.connections.following.includes(profile._id)
-              ? 'Unfollow'
+              ? 'Followed'
               : 'Follow'}
           </ProfilButton>
           <ProfilButton

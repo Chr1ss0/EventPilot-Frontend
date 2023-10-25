@@ -1,5 +1,6 @@
 import styles from './ProfileButton.module.css';
 import FollowIcon from '../../assets/img/FollowButton.svg';
+import FollowedIcon from '../../assets/img/FollowedIcon.svg';
 import EditIcon from '../../assets/img/EditIcon.svg';
 import StarIcon from '../../assets/img/StarButton.svg';
 import LockIcon from '../../assets/img/Lock.svg';
@@ -10,13 +11,16 @@ function ProfilButton({
   follow = false,
   review = false,
   loggout = false,
+  followActive = false,
   children,
 }) {
   return (
     <>
       <button
         onClick={onClick}
-        className={styles.button}>
+        className={
+          styles.button + ' ' + (followActive && follow ? styles.following : '')
+        }>
         {edit && (
           <img
             className={styles.icon}
@@ -27,7 +31,7 @@ function ProfilButton({
         {follow && (
           <img
             className={styles.icon}
-            src={FollowIcon}
+            src={followActive ? FollowedIcon : FollowIcon}
             alt='follow icon'
           />
         )}

@@ -33,7 +33,7 @@ function ExplorePage() {
     async function getEventsNearby() {
       const response = await fetch(
         import.meta.env.VITE_BACKEND_URL +
-          `/api/event/filtered?location=${'user'}`,
+          `/api/event/filtered?location=${'user'}&distance=100`,
         { credentials: 'include' },
       );
       // console.log(response);
@@ -49,8 +49,7 @@ function ExplorePage() {
   useEffect(() => {
     async function getRecentlyAdded() {
       const response = await fetch(
-        import.meta.env.VITE_BACKEND_URL +
-          `/api/event/filtered?sort=createdlast`,
+        import.meta.env.VITE_BACKEND_URL + `/api/event/all?sort=createdlast`,
         { credentials: 'include' },
       );
       // console.log(response);
