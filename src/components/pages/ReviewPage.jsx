@@ -28,6 +28,22 @@ function ReviewPage() {
     getProfile();
   }, []);
 
+  async function review(event) {
+    event.preventDefault();
+    const form = new FormData(event.target);
+    form.append('rating', rating);
+    form.append('receiver', profile._id);
+
+    const response = await fetch(
+      import.meta.env.VITE_BACKEND_URL + `/api/user/review`,
+      { method: 'POST', credentials: 'include', body: form },
+    );
+    const result = await response.json();
+    if (!response.ok) return console.error(result);
+    if (result.message === 'Token invalid.') return navigate('/signin');
+    console.log(result);
+  }
+
   if (!profile) return;
 
   return (
@@ -50,16 +66,22 @@ function ReviewPage() {
           setRating={setRating}
         />
       </div>
-      <div>
-        <textarea
-          name=''
-          id=''
-          cols='30'
-          rows='10'></textarea>
-      </div>
-      <div>
-        <MainButton>Submit</MainButton>
-      </div>
+      <form onSubmit={review}>
+        <div>
+          <img
+            src=''
+            alt=''
+          />
+          <textarea
+            name='content'
+            id=''
+            cols='30'
+            rows='10'></textarea>
+        </div>
+        <div>
+          <MainButton>Submit</MainButton>
+        </div>
+      </form>
     </div>
   );
 }
