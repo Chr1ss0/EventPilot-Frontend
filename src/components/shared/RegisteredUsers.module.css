@@ -23,7 +23,7 @@
 }
 
 .userImage {
-  max-width: var(--imgSize);
+  width: var(--imgSize);
   aspect-ratio: 1;
   border-radius: 50%;
   border: 2px solid white;
