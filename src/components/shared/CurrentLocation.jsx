@@ -1,6 +1,6 @@
 import styles from './CurrentLocation.module.css';
 
-function CurrentLocation({ light = true }) {
+function CurrentLocation({ light = true, children }) {
   return (
     <div className={styles['currentLocationWrapper']}>
       <p
@@ -9,7 +9,7 @@ function CurrentLocation({ light = true }) {
         }>
         Current Location
       </p>
-      <p className={light ? styles.lightTown : styles.darkTown}>Miami, USA</p>
+      <p className={light ? styles.lightTown : styles.darkTown}>{children}</p>
     </div>
   );
 }

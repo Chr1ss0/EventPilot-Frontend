@@ -7,13 +7,14 @@ import SearchBar from '../search/SearchBar.jsx';
 import FilterButton from '../search/FilterButton.jsx';
 import FilterBar from '../search/FilterBar.jsx';
 import FilterMenu from '../search/FilterMenu.jsx';
-import FilterLocationMenu from '../search/FilterLocationMenu.jsx';
+import { useNavigate } from 'react-router-dom';
 
 function SearchPage() {
+  const navigate = useNavigate();
   const [events, setEvents] = useState([]);
   const [filters, setFilters] = useState({
     title: '',
-    category: '',
+    category: 'Food',
     startDate: '',
     location: '',
     latitude: '',
@@ -40,8 +41,8 @@ function SearchPage() {
       const response = await fetch(url, { credentials: 'include' });
       // console.log(response);
       const result = await response.json();
+      if (result.message === 'Token invalid.') return navigate('/signin');
       console.log(result);
-
       if (!response.ok) return;
       setEvents(result);
     }
@@ -65,8 +66,10 @@ function SearchPage() {
           </div>
         </div>
       </article>
-      <FilterMenu />
-      <FilterLocationMenu />
+      <FilterMenu
+        filters={filters}
+        setFilters={setFilters}
+      />
       <div className={style.contentWrapper}>
         <EventListCol>
           {events.map((event) => (

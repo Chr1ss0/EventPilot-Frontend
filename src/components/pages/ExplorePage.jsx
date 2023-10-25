@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import EventListRow from '../layout/EventListRow.jsx';
 import EventItemRow from '../explore/EventItemRow.jsx';
 import CurrentLocation from '../shared/CurrentLocation.jsx';
@@ -7,8 +7,10 @@ import EventListCol from '../layout/EventListCol.jsx';
 import styling from './ExplorePage.module.css';
 
 import logo from '../../assets/img/Logo.svg';
+import { userContext } from '../../context/userContext.jsx';
 
 function ExplorePage() {
+  const { user } = useContext(userContext);
   const [eventsUpcoming, setEventsUpcoming] = useState(null);
   const [eventsNearby, setEventsNearby] = useState(null);
   const [recentlyAdded, setRecentlyAdded] = useState(null);
@@ -69,7 +71,12 @@ function ExplorePage() {
           src={logo}
           alt=''
         />
-        <CurrentLocation />
+        {user.userInfo.defaultLocation && (
+          <CurrentLocation>
+            {user.userInfo.defaultLocation?.placeName},{' '}
+            {user.userInfo.defaultLocation?.state}
+          </CurrentLocation>
+        )}
       </div>
       {eventsUpcoming && (
         <div className={styling['upcomingEventsWrapper']}>

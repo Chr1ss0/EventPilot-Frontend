@@ -1,49 +1,52 @@
-.headlineWrapper p{
-  color:#1F1F1F;
+.headlineWrapper p {
+  color: #1f1f1f;
   font-family: Inter;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 34px;
+  line-height: 2.125rem;
 }
 
-.filterDayWrapper{
+.filterDayWrapper {
   display: flex;
   margin-top: 10px;
   margin-bottom: 10px;
+  gap: 12px;
 }
-.filterDay{
-  padding:9px 19px 9px 19px;
-  border: 1px solid #E6E6E6;
+.filterDay {
+  padding: 9px 19px 9px 19px;
+  border: 1px solid #e6e6e6;
   border-radius: 5px;
+  background: none;
 }
-.filterDay p{
-  color: #807A7A;
+.filterDay p {
+  color: #807a7a;
   font-weight: 100;
-  font-size: 15px;
+  font-size: 1rem;
 }
-.filterDayActive{
+.filterDayActive {
   padding: 9px;
-  margin-left: 12px;
-  margin-right: 12px;
+  /* margin-left: 12px; */
+  /* margin-right: 12px; */
   border-radius: 5px;
-  background-color: #5D3EDE;
+  padding: 9px 19px 9px 19px;
+  background-color: #5d3ede;
 }
-.filterDayActive p{
+.filterDayActive p {
   color: #fff;
   font-weight: 100;
-  font-size: 15px;
+  font-size: 1rem;
 }
 .DateWrapper {
   max-width: 240px;
   text-align: center;
 }
-.DateWrapper input[type="date"] {
+.DateWrapper input[type='date'] {
   padding: 8px;
-  border: 1px solid #E6E6E6;
+  border: 1px solid #e6e6e6;
   border-radius: 5px;
 }
 
-.DateWrapper input[type="date"]::-webkit-calendar-picker-indicator {
+.DateWrapper input[type='date']::-webkit-calendar-picker-indicator {
   display: none;
 }
