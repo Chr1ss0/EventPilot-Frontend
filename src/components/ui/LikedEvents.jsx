@@ -1,47 +1,25 @@
 import { useState } from 'react';
 import styles from './LikedEvents.module.css';
 
-function LikedEvents() {
-  const [active, setActive] = useState(false);
+function LikedEvents({ state, setState }) {
   function clickButton() {
-    event.preventDefault();
-    setActive((current) => !current);
+    setState((current) => !current);
   }
 
   return (
     <div className={styles['likedEventsWrapper']}>
-      {active ? (
-        <button
-          onClick={clickButton}
-          className={styles['upcomingEventsWrapper']}>
-          BOOKMARKED
-        </button>
-      ) : (
-        <button
-          onClick={clickButton}
-          className={styles.left}>
-          BOOKMARKED
-        </button>
-      )}
-      {/* <div className={styles['upcomingEventsWrapper']}>
-        <p>UPCOMING</p>
-      </div> */}
-      {active ? (
-        <button
-          onClick={clickButton}
-          className={styles.right}>
-          REGISTERED
-        </button>
-      ) : (
-        <button
-          onClick={clickButton}
-          className={styles['pastEventsWrapper']}>
-          REGISTERED
-        </button>
-      )}
-      {/* <div className={styles['pastEventsWrapper']}>
-        <p>PAST EVENENTS</p>
-      </div> */}
+      <button
+        type='button'
+        onClick={clickButton}
+        className={state ? styles.right : styles['pastEventsWrapper']}>
+        REGISTERED
+      </button>
+      <button
+        type='button'
+        onClick={clickButton}
+        className={state ? styles['upcomingEventsWrapper'] : styles.left}>
+        BOOKMARKED
+      </button>
     </div>
   );
 }

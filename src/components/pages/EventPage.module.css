@@ -6,7 +6,8 @@
   margin-right: 40px;
   margin-top: 24px;
   margin-bottom: 100px;
-  justify-content: space-between;
+  gap: 20px;
+  /* justify-content: space-between; */
 }
 
 .upper {

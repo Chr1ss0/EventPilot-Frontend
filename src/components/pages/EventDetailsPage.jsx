@@ -51,7 +51,7 @@ function EventDetailsPage() {
     const result = await response.json();
     console.log(result);
     if (!response.ok) return;
-    // setUpdateEvent((prev) => !prev);
+    setUpdateEvent((prev) => !prev);
     updateUser();
   }
 
