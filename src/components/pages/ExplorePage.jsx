@@ -38,7 +38,7 @@ function ExplorePage() {
       );
       // console.log(response);
       const result = await response.json();
-      // console.log(result);
+      console.log('nearby', result);
 
       if (!response.ok) return;
       setEventsNearby(result);
@@ -55,7 +55,7 @@ function ExplorePage() {
       );
       // console.log(response);
       const result = await response.json();
-      console.log(result);
+      console.log('recent', result);
 
       if (!response.ok) return;
       setRecentlyAdded(result);

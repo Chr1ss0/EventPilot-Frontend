@@ -4,9 +4,11 @@ import EventItemCol from '../shared/EventItemCol.jsx';
 import EventListCol from '../layout/EventListCol.jsx';
 
 import style from './EventPage.module.css';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { userContext } from '../../context/userContext.jsx';
 
 function EventPage() {
+  const { updateUser } = useContext(userContext);
   const [events, setEvents] = useState(null);
   const [showBookmarked, setShowBookmarked] = useState(false);
 
@@ -55,7 +57,7 @@ function EventPage() {
                     <p>There are no Events yet!</p>
                   </div>
                 )
-              ) : events.bookmarks.length !== 0 ? (
+              ) : events.bookedEvents.length !== 0 ? (
                 events.bookedEvents.map((event) => (
                   <EventItemCol
                     key={event._id}
