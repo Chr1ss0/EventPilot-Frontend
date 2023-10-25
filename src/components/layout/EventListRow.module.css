@@ -1,5 +1,6 @@
 .row {
   display: flex;
   gap: 10px;
-  overflow: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
 }

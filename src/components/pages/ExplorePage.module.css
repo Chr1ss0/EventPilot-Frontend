@@ -1,0 +1,30 @@
+.explorePageWrapper{
+  margin-top: 17px;
+margin-left: 20px;
+}
+
+.logoStyling{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 220px;
+  margin-bottom: 10px;
+}
+.explorePageWrapper h2{
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.logoStyling img{
+  width: 32px;
+  height: 29px;
+}
+.upcomingEventsWrapper{
+  margin-bottom: 17px;
+}
+.eventListRowWrapper{
+  margin-bottom: 29px;
+}
+.eventListColWrapper{
+  margin-right: 25px;
+}
