@@ -7,6 +7,7 @@ import SearchBar from '../search/SearchBar.jsx';
 import FilterButton from '../search/FilterButton.jsx';
 import FilterBar from '../search/FilterBar.jsx';
 import FilterMenu from '../search/FilterMenu.jsx';
+import FilterLocationMenu from '../search/FilterLocationMenu.jsx';
 
 function SearchPage() {
   const [events, setEvents] = useState([]);
@@ -65,6 +66,7 @@ function SearchPage() {
         </div>
       </article>
       <FilterMenu />
+      <FilterLocationMenu />
       <div className={style.contentWrapper}>
         <EventListCol>
           {events.map((event) => (

@@ -1,0 +1,40 @@
+.filterLocationMenu_wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+.filterLocationMenu_input{
+   display: flex;
+  border: 1px solid #E5E5E5;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 250px;
+  }
+.filterLocationMenu_usericon{
+  width: 30px;
+}
+.filterLocationMenu_usericon_wrapper{
+  border: 1px solid #E5E5E5;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  display: flex;
+}.filterLocationMenu_usericon_wrapper:hover{
+ background-color: #00ecaa;
+}
+.filterLocationMenu_currentLocation {
+  text-transform: uppercase;
+  font-weight: 100;
+  align-self: center;
+  color: #1F1F1F;
+  width: 50px;
+  font-size: 1rem;
+  display: flex;
+}
+.filterLocationMenu_cta{
+  width: 15px;
+  height: 15px;
+  align-self: center;
+  margin-left: auto;
+}
+.filterLocationMenu_searchIcon{
+  margin-right: 1rem;
+}
