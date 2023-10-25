@@ -18,7 +18,9 @@ export default function LocationInput({ setLocationUser }) {
       <div className={styles['inputLocation']}>
         <input
           ref={locationRef}
-          onChange={(event) => locationHandler(event, setLocationUser)}
+          onChange={(event) =>
+            locationHandler(event, setLocationUser, setLocations)
+          }
           type='text'
           placeholder='Location'
           name='location'
@@ -33,6 +35,7 @@ export default function LocationInput({ setLocationUser }) {
                 type='button'
                 key={index}
                 onClick={() => {
+                  console.log(location);
                   setLocationUser(location);
                   setLocations([]);
                 }}>
