@@ -11,7 +11,7 @@ function RegisteredUsers({ event, big = false }) {
           {event.registeredUser.slice(0, 3).map((user, index) => (
             <img
               key={user._id}
-              src={user.userInfo.avatar.secure_url}
+              src={user.userInfo?.avatar.secure_url}
               alt=''
               loading='lazy'
               className={style.userImage + ' ' + style[`image${index + 1}`]}
