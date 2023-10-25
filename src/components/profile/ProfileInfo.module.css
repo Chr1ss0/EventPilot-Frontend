@@ -1,40 +1,45 @@
-.ProfileInfoWrapper{
+.ProfileInfoWrapper {
   display: flex;
   gap: 29px;
 }
-.ProfileInfoWrapper img{
+
+.ProfileInfoWrapper img {
   /* max-height: 124px; */
   max-width: 100px;
+  aspect-ratio: 1;
   border-radius: 50%;
   object-fit: cover;
-
 }
-.ProfileFollowerSection{
+
+.ProfileFollowerSection {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.ProfileFollowerSection p:first-child{
+
+.ProfileFollowerSection p:first-child {
   font-weight: 500;
 }
-.ProfileFollowerSection p{
+
+.ProfileFollowerSection p {
   font-weight: 100;
 }
-.ProfileFollowning{
+
+.ProfileFollowning {
   align-items: center;
   border-right: 1px solid #ddd;
   padding-right: 24px;
 }
-.ProfileFollower{
+
+.ProfileFollower {
   padding-left: 24px;
   border-left: 1px solid #ddd;
 }
 
-
 /* Vertical Profile */
 
-.VerticalProfile{
+.VerticalProfile {
   flex-direction: column;
   align-items: center;
 }
