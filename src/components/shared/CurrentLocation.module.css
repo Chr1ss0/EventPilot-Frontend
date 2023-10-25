@@ -1,0 +1,29 @@
+.currentLocationWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.lightCurrentLocation {
+  color: #7254ee;
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.lightTown {
+  color: #5d3ede;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.darkCurrentLocation {
+  color: white;
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.darkTown {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 13px;
+}

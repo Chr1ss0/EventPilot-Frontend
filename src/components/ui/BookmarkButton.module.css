@@ -1,0 +1,15 @@
+.button {
+  --_bg-color: var(--bg-color, #ffffffb4);
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-color: var(--_bg-color);
+  padding-inline: 12px;
+  aspect-ratio: 1;
+  border-radius: 8px;
+}
+
+.darkOpacity {
+  --bg-color: #ffffffb2;
+  opacity: 0.5;
+}

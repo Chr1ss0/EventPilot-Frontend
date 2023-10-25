@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+}
+
+.radio {
+  display: none;
+}
+
+.label {
+  cursor: pointer;
+}

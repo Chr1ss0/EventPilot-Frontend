@@ -1,0 +1,213 @@
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+  margin-bottom: 32px;
+}
+.logo-container h1 span {
+  color: #00ecaa;
+}
+.logo-container h1 {
+  color: #5d3ede;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 29px 0;
+  flex-grow: 1;
+}
+.form-container h2 {
+  font-size: 1.5rem;
+  /* padding-bottom: 20px; */
+  font-weight: 500;
+  height: 100%;
+}
+
+.inputDiv {
+  display: flex;
+  flex-shrink: 0;
+  padding: 20px 10px;
+  /*
+  margin: 15px 0;
+  padding: 15px 10px;
+  */
+  margin-bottom: 15px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0px 8px 30px 0px rgba(93, 62, 222, 0.1);
+  color: #848484d8;
+}
+.inputDiv :placeholder-shown {
+  font-weight: 100;
+}
+
+.inputDiv img {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.inputDiv > button {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+select {
+  border: 0px;
+  width: 100%;
+  background-color: unset;
+}
+
+.formulaPage-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.button-container {
+  margin-top: auto;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.switch-container {
+  margin-top: 20px;
+  /* margin-bottom: 38px; */
+  text-align: center;
+}
+
+.switch-container p {
+  font-weight: 100;
+}
+
+.switch-container a {
+  color: var(--main-bg-color_dark);
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+.backButton-wrapper {
+  position: absolute;
+  padding-left: 28px;
+  padding-top: 36px;
+  margin-bottom: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  flex-grow: 1;
+  min-height: 70vh;
+  padding-bottom: 48px;
+}
+
+/* only on the /addevent Page */
+
+.addevent-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  color: #5d3ede;
+  /* margin-bottom: 87px; */
+  margin-bottom: 20px;
+}
+.addevent-container h1 span {
+  color: #00ecaa;
+}
+.addevent-container h1 {
+  font-weight: 500;
+}
+
+/* only on /addevent and /editprofile */
+
+.inputLocation {
+  position: relative;
+  width: 100%;
+}
+.locationBtnsWrapper {
+  background-color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  top: 100%;
+  margin-top: 20px;
+  width: 100%;
+  z-index: 10;
+}
+
+.locationBtnsWrapper > button {
+  cursor: pointer;
+}
+
+.locationBtnsWrapper > button,
+.locationText {
+  border: none;
+  background: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 30px 0px rgba(93, 62, 222, 0.1);
+}
+.locationText {
+  color: #5d3ede;
+  box-shadow: 0px 8px 30px 0px rgba(94, 62, 222, 0.451);
+}
+
+.aboutInputDiv {
+  display: flex;
+  align-items: start;
+  padding: 20px 10px;
+  margin: 15px 0;
+  border: 0;
+  border-radius: 0.625rem;
+  box-shadow: 0rem 0.5rem 1.875rem 0rem rgba(93, 62, 222, 0.1);
+  color: #848484d8;
+}
+
+.aboutInputDiv img {
+  margin-right: 10px;
+}
+.aboutInputDiv a {
+  margin-left: auto;
+}
+
+.aboutInputDiv > textarea {
+  flex: 1;
+  border: none;
+  padding-bottom: 100px;
+}
+
+textarea:placeholder-shown {
+  font-weight: 100;
+}
+
+.inputDiv > input[type='datetime-local']:not(:focus) {
+  font-weight: 100;
+}
+
+.inputDiv:has(input[name='startDate']) {
+  border: 2px solid var(--sec-bg-color);
+}
+
+.inputDiv:has(input[name='endDate']) {
+  border: 2px solid var(--main-bg-color_dark);
+}
+
+.inputDiv > input[type='file'] {
+  display: none;
+}
+
+select:invalid {
+  color: #848484d8;
+  font-weight: 100;
+}
+
+label {
+  font-weight: 100;
+}

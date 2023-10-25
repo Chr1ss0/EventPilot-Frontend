@@ -1,0 +1,57 @@
+.filterBarWraper{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 300px;
+}
+.filterBarWraper svg{
+  padding-right: 3px;
+}
+.filterBarWraper p{
+  font-weight: 100;
+}
+.musicWrapper{
+  display: flex;
+  align-items: center;
+  background-color: #00ECAA;
+  border-radius: 5px;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+
+.artWrapper{
+  display: flex;
+  align-items: center;
+  background-color: #876AFD;
+  border-radius: 5px;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+.artWrapper p{
+  color: #fff;
+}
+
+.sportsWrapper{
+  display: flex;
+  align-items: center;
+  background-color: #876AFD;
+  border-radius: 5px;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+.sportsWrapper p{
+  color: #fff;
+}
+
+.foodWrapper{
+  display: flex;
+  align-items: center;
+  background-color: #876AFD;
+  border-radius: 5px;
+  padding: 10px;
+  justify-content: space-evenly;
+  color: #fff;
+}
+.foodWrapper p{
+  color: #fff;
+}
