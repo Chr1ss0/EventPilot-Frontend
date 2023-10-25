@@ -27,7 +27,8 @@ function UserProvider({ children }) {
       if (
         result.message === 'Token invalid.' &&
         pathname !== '/signup' &&
-        pathname !== '/signin'
+        pathname !== '/signin' &&
+        pathname !== '/'
       ) {
         navigate('/signin');
       }
