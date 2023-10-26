@@ -200,6 +200,10 @@ textarea:placeholder-shown {
   border: 2px solid var(--main-bg-color_dark);
 }
 
+.inputDiv:has(input[name='image']:valid) {
+  border: 2px solid var(--sec-bg-color);
+}
+
 .inputDiv > input[type='file'] {
   display: none;
 }
