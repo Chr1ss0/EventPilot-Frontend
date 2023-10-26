@@ -70,6 +70,7 @@ function SignUpPage() {
               type='text'
               placeholder='First Name'
               name='firstName'
+              required
             />
           </div>
           <div className={styles['inputDiv']}>
@@ -81,6 +82,7 @@ function SignUpPage() {
               type='text'
               placeholder='Last Name'
               name='lastName'
+              required
             />
           </div>
           <div className={styles['inputDiv']}>
@@ -92,6 +94,7 @@ function SignUpPage() {
               type='email'
               placeholder='yourmail@email.com'
               name='email'
+              required
             />
           </div>
           <div className={styles['inputDiv']}>
@@ -104,6 +107,7 @@ function SignUpPage() {
               name='password'
               placeholder='password'
               autoComplete='new-password'
+              required
             />
             <button
               type='button'

@@ -111,6 +111,7 @@ export default function ProfileEditPage() {
               type='text'
               defaultValue={user.userInfo.firstName}
               name='firstName'
+              required
             />
           </div>
           <div className={styleInputs.inputDiv}>
@@ -122,6 +123,7 @@ export default function ProfileEditPage() {
               type='text'
               defaultValue={user.userInfo.lastName}
               name='lastName'
+              required
             />
           </div>
           <LocationInput setLocationUser={setLocationUser} />
