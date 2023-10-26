@@ -7,7 +7,7 @@ function UserProvider({ children }) {
   const [user, setUser] = useState(userContext);
   const { pathname } = useLocation();
   const [hasUser, setHasUser] = useState(false);
-  const [update, setUpdate] = useState(true);
+  const [update, setUpdate] = useState(false);
 
   const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ function UserProvider({ children }) {
         pathname !== '/signin' &&
         pathname !== '/'
       ) {
-        navigate('/signin');
+        return navigate('/signin');
       }
       setHasUser(true);
       if (!response.ok) {

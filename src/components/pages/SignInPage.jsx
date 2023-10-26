@@ -12,7 +12,7 @@ import { userContext } from '../../context/userContext.jsx';
 
 function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
-  const { updateUser } = useContext(userContext);
+  const { user, updateUser } = useContext(userContext);
 
   function togglePassword() {
     setShowPassword((prev) => !prev);
