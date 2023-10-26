@@ -5,7 +5,13 @@ import FilterMenuTime from './FilterMenuTime.jsx';
 
 import style from './FilterMenu.module.css';
 
-function FilterMenu({ filters, setFilters, display = false }) {
+function FilterMenu({
+  filters,
+  setFilters,
+  display = false,
+  setDisplayMenu,
+  updateSearch,
+}) {
   return (
     <div className={style.wrapper + ' ' + (display ? style.active : '')}>
       <h2 className={style.mainHeading}>Filter</h2>
@@ -14,11 +20,11 @@ function FilterMenu({ filters, setFilters, display = false }) {
           <h3 className={style.sectionTitle}>Category</h3>
           <div className={style.categories}>
             <FilterMenuCategory
-              active={filters.category === 'Sports'}
+              active={filters.category === 'Sport'}
               category='sports'
               onClick={() =>
                 setFilters((prev) => {
-                  return { ...prev, category: 'Sports' };
+                  return { ...prev, category: 'Sport' };
                 })
               }
             />
@@ -64,11 +70,30 @@ function FilterMenu({ filters, setFilters, display = false }) {
       </div>
       <div className={style.buttons}>
         <button
+          onClick={() => {
+            setFilters({
+              title: '',
+              category: '',
+              startDate: '',
+              endDate: '',
+              location: '',
+              latitude: '',
+              longitude: '',
+            });
+            updateSearch();
+            setDisplayMenu(false);
+          }}
           type='button'
           className={style.resetButton}>
           Reset
         </button>
-        <MainButton>apply</MainButton>
+        <MainButton
+          onClick={() => {
+            updateSearch();
+            setDisplayMenu(false);
+          }}>
+          apply
+        </MainButton>
       </div>
     </div>
   );

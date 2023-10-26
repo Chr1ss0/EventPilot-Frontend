@@ -11,18 +11,25 @@ import { useNavigate } from 'react-router-dom';
 
 function SearchPage() {
   const navigate = useNavigate();
-  const [filterMenu, setFilterMenu] = useState(false);
+  const [displayMenu, setDisplayMenu] = useState(false);
   const [events, setEvents] = useState([]);
+  const [search, setSearch] = useState(false);
   const [filters, setFilters] = useState({
     title: '',
     category: '',
     startDate: '',
+    endDate: '',
     location: '',
     latitude: '',
     longitude: '',
   });
 
+  function updateSearch() {
+    setSearch((prev) => !prev);
+  }
+
   useEffect(() => {
+    console.log(filters);
     const filtersEmpty = Object.values(filters).every((cur) => '' === cur);
     const filterQuery = Object.entries(filters)
       .map((entry) => `${entry[0]}=${entry[1]}`)
@@ -48,7 +55,7 @@ function SearchPage() {
       setEvents(result);
     }
     getEvents();
-  }, [filters]);
+  }, [search]);
 
   return (
     <div className={style.pageWrapper}>
@@ -57,20 +64,23 @@ function SearchPage() {
           <CurrentLocation light={false}></CurrentLocation>
           <div className={style.searchLine}>
             <SearchBar />
-            <FilterButton onClick={() => setFilterMenu((prev) => !prev)} />
+            <FilterButton onClick={() => setDisplayMenu((prev) => !prev)} />
           </div>
           <div className={style.bar}>
             <FilterBar
               filter={filters}
               setFilters={setFilters}
+              updateSearch={updateSearch}
             />
           </div>
         </div>
       </article>
       <FilterMenu
-        display={filterMenu}
+        display={displayMenu}
+        setDisplayMenu={setDisplayMenu}
         filters={filters}
         setFilters={setFilters}
+        updateSearch={updateSearch}
       />
       <div className={style.contentWrapper}>
         <EventListCol>
