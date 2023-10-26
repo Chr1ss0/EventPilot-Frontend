@@ -65,7 +65,7 @@ function FilterMenu({
         </div>
         <div className={style.section}>
           <h3 className={style.sectionTitle}>Location</h3>
-          <FilterLocationMenu />
+          <FilterLocationMenu setFilters={setFilters} />
         </div>
       </div>
       <div className={style.buttons}>
