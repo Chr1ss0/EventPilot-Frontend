@@ -15,7 +15,7 @@ import { useContext } from 'react';
 import { userContext } from '../../context/userContext.jsx';
 
 function Navbar() {
-  const { user, updateUser, setUser } = useContext(userContext);
+  const { user, updateUser } = useContext(userContext);
 
   return (
     <>
