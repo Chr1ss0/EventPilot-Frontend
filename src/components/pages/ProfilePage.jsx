@@ -13,11 +13,13 @@ import EventItemCol from '../shared/EventItemCol.jsx';
 
 function ProfilePage() {
   const { id, profileTab } = useParams();
-  console.log(profileTab);
-  const { user, updateUser, setUser } = useContext(userContext);
-  const [profile, setProfile] = useState(null);
+
+  const { user, updateUser } = useContext(userContext);
+
   const [tab, setTab] = useState(profileTab || 'about');
+  const [profile, setProfile] = useState(null);
   const [update, setUpdate] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
