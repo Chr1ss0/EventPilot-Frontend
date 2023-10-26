@@ -17,7 +17,7 @@ export default function Protected() {
 
       const result = await response.json();
       console.log(result);
-      if (!response.ok) navigate('/signin');
+      if (!response.ok) return navigate('/signin');
       setValidated(true);
     }
     validateUser();

@@ -7,11 +7,13 @@ import calenderIcon from '../../assets/img/Calender.svg';
 import imageIcon from '../../assets/img/ImageIcon.svg';
 import { useEffect, useRef, useState } from 'react';
 import BackButton from '../ui/BackButton.jsx';
+import { useNavigate } from 'react-router-dom';
 
 function AddEventPage() {
   const [locationUser, setLocationUser] = useState(null);
   const [locations, setLocations] = useState([]);
   const locationRef = useRef();
+  const navigate = useNavigate();
 
   const currentTime = new Date();
   currentTime.setMinutes(
@@ -50,6 +52,9 @@ function AddEventPage() {
     // console.log(response);
     const result = await response.json();
     console.log(result);
+
+    if (!response.ok) return;
+    navigate(`/events/details/${result._id}`);
   }
 
   async function locationHandler(event) {
@@ -139,7 +144,7 @@ function AddEventPage() {
                 ref={locationRef}
                 onChange={locationHandler}
                 type='text'
-                placeholder='Location'
+                placeholder='Zipcode, Place'
                 name='location'
               />
               {locations.length > 0 && (

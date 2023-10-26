@@ -28,7 +28,14 @@ function ReviewItem({ review }) {
               </div>
             </div>
             <div className={style.stars}>
-              <img
+              {[...Array(review.rating)].map((point, index) => (
+                <img
+                  key={index}
+                  src={starIcon}
+                  alt='star'
+                />
+              ))}
+              {/* <img
                 src={starIcon}
                 alt='star'
               />
@@ -47,7 +54,7 @@ function ReviewItem({ review }) {
               <img
                 src={starIcon}
                 alt='star'
-              />
+              /> */}
             </div>
           </div>
           <article className={style.review}>
