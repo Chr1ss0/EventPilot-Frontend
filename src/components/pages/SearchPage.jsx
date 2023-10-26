@@ -63,7 +63,10 @@ function SearchPage() {
         <div>
           <CurrentLocation light={false}></CurrentLocation>
           <div className={style.searchLine}>
-            <SearchBar />
+            <SearchBar
+              setFilters={setFilters}
+              updateSearch={updateSearch}
+            />
             <FilterButton onClick={() => setDisplayMenu((prev) => !prev)} />
           </div>
           <div className={style.bar}>
