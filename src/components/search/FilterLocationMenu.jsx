@@ -16,7 +16,12 @@ export default function FilterLocationMenu({ setFilters }) {
       if (user.userInfo?.defaultLocation.placeName) {
         setSearchLocation(user.userInfo.defaultLocation.placeName);
         setFilters((prev) => {
-          return { ...prev, location: 'user', distance: 200 };
+          return {
+            ...prev,
+            location: 'user',
+            distance: 200,
+            placeName: user.userInfo.defaultLocation.placeName,
+          };
         });
       } else setSearchLocation('No default.');
     } catch (error) {
@@ -38,6 +43,7 @@ export default function FilterLocationMenu({ setFilters }) {
           ...prev,
           latitude: data[0].latitude,
           longitude: data[0].longitude,
+          placeName: data[0]['place name'],
           distance: 150,
         };
       });
