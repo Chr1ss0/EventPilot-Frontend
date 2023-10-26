@@ -61,7 +61,9 @@ function SearchPage() {
     <div className={style.pageWrapper}>
       <article className={style.upper}>
         <div>
-          <CurrentLocation light={false}></CurrentLocation>
+          <CurrentLocation light={false}>
+            {filters.placeName ? filters.placeName : 'No location set'}
+          </CurrentLocation>
           <div className={style.searchLine}>
             <SearchBar
               setFilters={setFilters}
