@@ -34,24 +34,6 @@ function App() {
             element={<SignUpPage />}
           />
           <Route element={<Protected />}>
-            <Route element={<Navbar />}>
-              <Route
-                path='/explore'
-                element={<ExplorePage />}
-              />
-              <Route
-                path='/search'
-                element={<SearchPage />}
-              />
-              <Route
-                path='/user/:id'
-                element={<ProfilePage />}
-              />
-              <Route
-                path='/events/own'
-                element={<EventPage />}
-              />
-            </Route>
             <Route
               path='/user/:id/review'
               element={<ReviewPage />}
@@ -68,6 +50,24 @@ function App() {
               path='/addevent'
               element={<AddEventPage />}
             />
+            <Route element={<Navbar />}>
+              <Route
+                path='/explore'
+                element={<ExplorePage />}
+              />
+              <Route
+                path='/search'
+                element={<SearchPage />}
+              />
+              <Route
+                path='/user/:id/:profileTab?'
+                element={<ProfilePage />}
+              />
+              <Route
+                path='/events/own'
+                element={<EventPage />}
+              />
+            </Route>
           </Route>
           <Route
             path='/test'

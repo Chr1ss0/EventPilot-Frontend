@@ -14,6 +14,7 @@ import editIcon from '../../assets/img/EditIcon.svg';
 
 import style from './ProfileEditPage.module.css';
 import styleInputs from './SignInPage.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function ProfileEditPage() {
   const { user, updateUser, setUser } = useContext(userContext);
@@ -21,8 +22,8 @@ export default function ProfileEditPage() {
   const [profileImage, setProfileImage] = useState(
     user.userInfo.avatar.secure_url,
   );
-
   const [locationUser, setLocationUser] = useState(null);
+  const navigate = useNavigate();
 
   function updateImage(event) {
     const [file] = event.target.files;
@@ -64,6 +65,7 @@ export default function ProfileEditPage() {
 
     if (!response.ok) return;
     updateUser();
+    navigate(`/user/${user._id}`);
   }
 
   return (
@@ -111,6 +113,7 @@ export default function ProfileEditPage() {
               type='text'
               defaultValue={user.userInfo.firstName}
               name='firstName'
+              required
             />
           </div>
           <div className={styleInputs.inputDiv}>
@@ -122,6 +125,7 @@ export default function ProfileEditPage() {
               type='text'
               defaultValue={user.userInfo.lastName}
               name='lastName'
+              required
             />
           </div>
           <LocationInput setLocationUser={setLocationUser} />

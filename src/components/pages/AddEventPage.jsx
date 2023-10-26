@@ -110,6 +110,7 @@ function AddEventPage() {
               type='text'
               placeholder='Event Name'
               name='title'
+              required
             />
           </div>
           <div className={styles['inputDiv']}>
@@ -146,6 +147,7 @@ function AddEventPage() {
                 type='text'
                 placeholder='Zipcode, Place'
                 name='location'
+                required
               />
               {locations.length > 0 && (
                 <div className={styles.locationBtnsWrapper}>
@@ -176,6 +178,7 @@ function AddEventPage() {
               name='startDate'
               type='datetime-local'
               defaultValue={currentTime.toISOString().slice(0, 16)}
+              required
             />
           </div>
           <div className={styles['inputDiv']}>
@@ -187,6 +190,7 @@ function AddEventPage() {
               name='endDate'
               type='datetime-local'
               defaultValue={currentTime.toISOString().slice(0, 16)}
+              required
             />
           </div>
 
@@ -197,6 +201,7 @@ function AddEventPage() {
             />
             <textarea
               placeholder='About'
+              required
               name='description'></textarea>
           </div>
           <div className={styles['inputDiv']}>
@@ -209,6 +214,7 @@ function AddEventPage() {
               type='file'
               name='image'
               id='eventImage'
+              required
             />
           </div>
         </div>

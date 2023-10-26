@@ -32,20 +32,22 @@ function ExplorePage() {
   }, []);
 
   useEffect(() => {
-    async function getEventsNearby() {
-      const response = await fetch(
-        import.meta.env.VITE_BACKEND_URL +
-          `/api/event/filtered?location=${'user'}&distance=100&startDate=available`,
-        { credentials: 'include' },
-      );
-      // console.log(response);
-      const result = await response.json();
-      console.log('nearby', result);
+    if (user.userInfo.defaultLocation) {
+      async function getEventsNearby() {
+        const response = await fetch(
+          import.meta.env.VITE_BACKEND_URL +
+            `/api/event/filtered?location=${'user'}&distance=100&startDate=available`,
+          { credentials: 'include' },
+        );
+        // console.log(response);
+        const result = await response.json();
+        console.log('nearby', result);
 
-      if (!response.ok) return;
-      setEventsNearby(result);
+        if (!response.ok) return;
+        setEventsNearby(result);
+      }
+      getEventsNearby();
     }
-    getEventsNearby();
   }, []);
 
   useEffect(() => {
@@ -71,7 +73,7 @@ function ExplorePage() {
           src={logo}
           alt=''
         />
-        {user.userInfo.defaultLocation && (
+        {user.userInfo?.defaultLocation && (
           <CurrentLocation>
             {user.userInfo.defaultLocation?.placeName},{' '}
             {user.userInfo.defaultLocation?.state}

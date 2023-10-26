@@ -44,6 +44,7 @@ function ReviewPage() {
     if (!response.ok) return console.error(result);
     if (result.message === 'Token invalid.') return navigate('/signin');
     console.log(result);
+    navigate(`/user/${profile._id}/reviews`);
   }
 
   if (!profile) return;
@@ -86,7 +87,6 @@ function ReviewPage() {
               className={style.textArea}
               name='content'
               id=''
-              cols='150'
               rows='18'></textarea>
           </div>
           <div>
