@@ -1,6 +1,7 @@
 .reviewOverall {
   display: flex;
   align-items: start;
+  text-decoration: none;
 }
 
 .picDiv {
@@ -15,6 +16,10 @@
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.reviewContent {
+  flex: 1;
 }
 
 .nameDiv {

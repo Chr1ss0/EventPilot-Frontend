@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import style from './BookmarkButton.module.css';
 import { userContext } from '../../context/userContext.jsx';
 
-function BookmarkButton({ event, darkOpacity = false }) {
+function BookmarkButton({ event, darkOpacity = false, reload }) {
   const { user, updateUser, setUser } = useContext(userContext);
   const [favorite, setFavorite] = useState(false);
 
@@ -27,6 +27,7 @@ function BookmarkButton({ event, darkOpacity = false }) {
     const result = await response.json();
     console.log(result);
     updateUser();
+    if (reload) reload();
   }
 
   return (

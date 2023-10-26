@@ -9,8 +9,13 @@ import { userContext } from '../../context/userContext.jsx';
 
 function EventPage() {
   const { updateUser } = useContext(userContext);
+  const [update, setUpdate] = useState(false);
   const [events, setEvents] = useState(null);
   const [showBookmarked, setShowBookmarked] = useState(false);
+
+  function reload() {
+    setUpdate((prev) => !prev);
+  }
 
   useEffect(() => {
     async function getEvents() {
@@ -26,7 +31,7 @@ function EventPage() {
       setEvents(result);
     }
     getEvents();
-  }, []);
+  }, [update]);
 
   if (!events) return;
 
@@ -49,6 +54,7 @@ function EventPage() {
                     <EventItemCol
                       key={event._id}
                       event={event}
+                      reload={reload}
                     />
                   ))
                 ) : (
@@ -62,6 +68,7 @@ function EventPage() {
                   <EventItemCol
                     key={event._id}
                     event={event}
+                    reload={reload}
                   />
                 ))
               ) : (

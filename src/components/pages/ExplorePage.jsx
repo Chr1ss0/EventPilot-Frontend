@@ -35,7 +35,7 @@ function ExplorePage() {
     async function getEventsNearby() {
       const response = await fetch(
         import.meta.env.VITE_BACKEND_URL +
-          `/api/event/filtered?location=${'user'}&distance=100`,
+          `/api/event/filtered?location=${'user'}&distance=100&startDate=available`,
         { credentials: 'include' },
       );
       // console.log(response);

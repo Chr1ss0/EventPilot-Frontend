@@ -1,15 +1,24 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import style from './SearchBar.module.css';
 
 function SearchBar({ updateSearch, setFilters }) {
   const searchRef = useRef();
+  const [inputValue, setInputValue] = useState('');
 
-  function search() {
-    setFilters((prev) => {
-      return { ...prev, title: searchRef.current.value };
-    });
-    updateSearch();
+  function updateInputValue() {
+    console.log(searchRef.current.value);
+    setInputValue(searchRef.current.value);
   }
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setFilters((prev) => {
+        return { ...prev, title: searchRef.current.value };
+      });
+      updateSearch();
+    }, 500);
+    return () => clearTimeout(timeoutId);
+  }, [inputValue, 500]);
 
   return (
     <>
@@ -38,7 +47,8 @@ function SearchBar({ updateSearch, setFilters }) {
         </svg>
         <input
           ref={searchRef}
-          onChange={search}
+          // onChange={search}
+          onChange={updateInputValue}
           type='text'
           placeholder='Search...'
         />
