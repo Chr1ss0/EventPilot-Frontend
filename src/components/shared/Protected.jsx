@@ -16,8 +16,10 @@ export default function Protected() {
       // console.log(response);
 
       const result = await response.json();
-      console.log(result);
-      if (!response.ok) return navigate('/signin');
+
+      if (result.message === 'Token invalid.') return navigate('/signin');
+      if (!response.ok) return console.log(result);
+
       setValidated(true);
     }
     validateUser();
