@@ -1,6 +1,16 @@
+import { useRef } from 'react';
 import style from './SearchBar.module.css';
 
-function SearchBar() {
+function SearchBar({ updateSearch, setFilters }) {
+  const searchRef = useRef();
+
+  function search() {
+    setFilters((prev) => {
+      return { ...prev, title: searchRef.current.value };
+    });
+    updateSearch();
+  }
+
   return (
     <>
       <div className={style['searchBarWrapper']}>
@@ -27,6 +37,8 @@ function SearchBar() {
           />
         </svg>
         <input
+          ref={searchRef}
+          onChange={search}
           type='text'
           placeholder='Search...'
         />
