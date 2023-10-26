@@ -22,7 +22,7 @@ export default function LocationInput({ setLocationUser }) {
             locationHandler(event, setLocationUser, setLocations)
           }
           type='text'
-          placeholder='Location'
+          placeholder='Zipcode'
           name='location'
         />
         {locations.length > 0 && (

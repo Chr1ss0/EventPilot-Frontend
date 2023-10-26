@@ -16,6 +16,7 @@ function ProfilePage() {
   const { user, updateUser, setUser } = useContext(userContext);
   const [profile, setProfile] = useState(null);
   const [tab, setTab] = useState('about');
+  const [update, setUpdate] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,11 +28,11 @@ function ProfilePage() {
       const result = await response.json();
       if (result.message === 'Token invalid.') return navigate('/signin');
       if (!response.ok) return console.error(result);
-      // console.log(result);
+      console.log(result);
       setProfile(result);
     }
     getProfile();
-  }, []);
+  }, [update]);
 
   async function follow() {
     const response = await fetch(
@@ -44,6 +45,7 @@ function ProfilePage() {
     if (result.message === 'Token invalid.') return navigate('/signin');
     if (!response.ok) return;
     updateUser();
+    setUpdate((prev) => !prev);
   }
 
   function review() {

@@ -17,7 +17,7 @@ function SearchPage() {
   const [filters, setFilters] = useState({
     title: '',
     category: '',
-    startDate: '',
+    startDate: 'available',
     endDate: '',
     location: '',
     latitude: '',
