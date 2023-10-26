@@ -1,11 +1,15 @@
 .pageWrapper {
   margin-bottom: 100px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .upper {
   background-color: var(--main-bg-color_dark);
   padding-left: 30px;
 }
+
 .searchLine {
   display: flex;
   justify-content: space-between;
@@ -17,9 +21,34 @@
 
 .contentWrapper {
   /* remove bottom padding if looking to empty */
+  display: flex;
+  flex: 1;
+  /* justify-content: center; */
   padding: 12px 20px 12px 28px;
 }
 
 .bar {
   padding-bottom: 8px;
+}
+
+.noEvents {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.noEvents h2 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.8125rem;
+  margin-bottom: 14px;
+}
+
+.noEvents p {
+  font-weight: 100;
+  font-size: 1rem;
+  line-height: 1.5625rem;
 }

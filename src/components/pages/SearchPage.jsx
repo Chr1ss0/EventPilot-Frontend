@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 function SearchPage() {
   const navigate = useNavigate();
   const [displayMenu, setDisplayMenu] = useState(false);
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState(null);
   const [search, setSearch] = useState(false);
   const [filters, setFilters] = useState({
     title: '',
@@ -86,14 +86,22 @@ function SearchPage() {
         updateSearch={updateSearch}
       />
       <div className={style.contentWrapper}>
-        <EventListCol>
-          {events.map((event) => (
-            <EventItemCol
-              key={event._id}
-              event={event}
-            />
+        {events &&
+          (events.length > 0 ? (
+            <EventListCol>
+              {events.map((event) => (
+                <EventItemCol
+                  key={event._id}
+                  event={event}
+                />
+              ))}
+            </EventListCol>
+          ) : (
+            <div className={style.noEvents}>
+              <h2>No Events found</h2>
+              <p>Please change your filters</p>
+            </div>
           ))}
-        </EventListCol>
       </div>
     </div>
   );

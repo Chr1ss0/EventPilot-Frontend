@@ -4,7 +4,7 @@ import BookmarkButton from '../ui/BookmarkButton.jsx';
 import LocationIcon from '../../assets/img/Location.svg';
 import { Link } from 'react-router-dom';
 
-function EventItemCol({ event }) {
+function EventItemCol({ event, reload }) {
   // console.log(event);
   const startDate = new Date(event.eventInfo.startDate);
   const startDateDisplay = startDate.toLocaleString(undefined, {
@@ -43,7 +43,10 @@ function EventItemCol({ event }) {
           </div>
         </Link>
         <div className={styles.bookmark}>
-          <BookmarkButton event={event} />
+          <BookmarkButton
+            event={event}
+            reload={reload}
+          />
         </div>
       </div>
     </>
