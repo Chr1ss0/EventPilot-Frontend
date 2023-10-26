@@ -32,7 +32,7 @@ function ProfilePage() {
       setProfile(result);
     }
     getProfile();
-  }, [update]);
+  }, [update, id]);
 
   async function follow() {
     const response = await fetch(

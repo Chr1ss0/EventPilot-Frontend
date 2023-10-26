@@ -40,3 +40,7 @@ input,
 :link {
   color: inherit;
 }
+
+a:visited {
+  color: inherit;
+}
