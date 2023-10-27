@@ -139,6 +139,7 @@ export default function ProfileEditPage() {
             <textarea
               name='aboutMe'
               rows={4}
+              placeholder='Tell us about yourself'
               defaultValue={user.userInfo.aboutMe}></textarea>
           </div>
         </div>
