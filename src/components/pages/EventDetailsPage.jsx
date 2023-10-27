@@ -15,7 +15,7 @@ import follow from '../../functions/follow.js';
 import RegisteredUsers from '../shared/RegisteredUsers.jsx';
 
 function EventDetailsPage() {
-  const { user, updateUser, setUser } = useContext(userContext);
+  const { user, updateUser } = useContext(userContext);
   const [updateEvent, setUpdateEvent] = useState(false);
 
   const { id } = useParams();

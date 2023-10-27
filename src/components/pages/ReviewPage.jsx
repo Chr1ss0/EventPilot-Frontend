@@ -11,7 +11,7 @@ import star from '../../assets/img/starGrey.svg';
 function ReviewPage() {
   const { id } = useParams();
   const [profile, setProfile] = useState(null);
-  const { user, updateUser, setUser } = useContext(userContext);
+  const { user, updateUser } = useContext(userContext);
   const [rating, setRating] = useState(3);
   const navigate = useNavigate();
 
