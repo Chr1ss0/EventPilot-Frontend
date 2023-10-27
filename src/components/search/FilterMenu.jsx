@@ -11,6 +11,7 @@ function FilterMenu({
   display = false,
   setDisplayMenu,
   updateSearch,
+  searchRef,
 }) {
   return (
     <div className={style.wrapper + ' ' + (display ? style.active : '')}>
@@ -82,6 +83,7 @@ function FilterMenu({
             });
             updateSearch();
             setDisplayMenu(false);
+            searchRef.current.value = '';
           }}
           type='button'
           className={style.resetButton}>

@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import style from './SearchBar.module.css';
 
-function SearchBar({ updateSearch, setFilters }) {
-  const searchRef = useRef();
+function SearchBar({ updateSearch, setFilters, searchRef }) {
+  searchRef = searchRef || useRef();
   const [inputValue, setInputValue] = useState('');
 
   function updateInputValue() {
-    console.log(searchRef.current.value);
+    // console.log(searchRef.current.value);
     setInputValue(searchRef.current.value);
   }
 
