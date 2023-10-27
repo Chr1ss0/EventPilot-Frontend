@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import EventListCol from '../layout/EventListCol.jsx';
 import EventItemCol from '../shared/EventItemCol.jsx';
 import style from './SearchPage.module.css';
@@ -23,13 +23,14 @@ function SearchPage() {
     latitude: '',
     longitude: '',
   });
+  const searchRef = useRef();
 
   function updateSearch() {
     setSearch((prev) => !prev);
   }
 
   useEffect(() => {
-    console.log(filters);
+    // console.log(filters);
     const filtersEmpty = Object.values(filters).every((cur) => '' === cur);
     const filterQuery = Object.entries(filters)
       .map((entry) => `${entry[0]}=${entry[1]}`)
@@ -43,7 +44,7 @@ function SearchPage() {
         import.meta.env.VITE_BACKEND_URL
       }/api/event/filtered?${filterQuery}`;
     }
-    console.log({ url });
+    // console.log({ url });
 
     async function getEvents() {
       const response = await fetch(url, { credentials: 'include' });
@@ -68,6 +69,7 @@ function SearchPage() {
             <SearchBar
               setFilters={setFilters}
               updateSearch={updateSearch}
+              searchRef={searchRef}
             />
             <FilterButton onClick={() => setDisplayMenu((prev) => !prev)} />
           </div>
@@ -86,6 +88,7 @@ function SearchPage() {
         filters={filters}
         setFilters={setFilters}
         updateSearch={updateSearch}
+        searchRef={searchRef}
       />
       <div className={style.contentWrapper}>
         {events &&

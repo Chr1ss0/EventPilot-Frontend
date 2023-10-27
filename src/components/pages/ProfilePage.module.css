@@ -1,4 +1,5 @@
 .pageWrapper {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -22,6 +23,7 @@
 }
 
 .tabsWrapper {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -72,4 +74,27 @@
   font-size: 1rem;
   font-weight: 100;
   line-height: 1.5rem;
+  white-space: break-spaces;
+}
+
+.noEvents {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.noEvents h2 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.8125rem;
+  margin-bottom: 14px;
+}
+
+.noEvents p {
+  font-weight: 100;
+  font-size: 1rem;
+  line-height: 1.5625rem;
 }

@@ -17,7 +17,7 @@ import styleInputs from './SignInPage.module.css';
 import { useNavigate } from 'react-router-dom';
 
 export default function ProfileEditPage() {
-  const { user, updateUser, setUser } = useContext(userContext);
+  const { user, updateUser } = useContext(userContext);
   const [interests, setInterests] = useState([...user.userInfo.interest]);
   const [profileImage, setProfileImage] = useState(
     user.userInfo.avatar.secure_url,
@@ -139,6 +139,7 @@ export default function ProfileEditPage() {
             <textarea
               name='aboutMe'
               rows={4}
+              placeholder='Tell us about yourself'
               defaultValue={user.userInfo.aboutMe}></textarea>
           </div>
         </div>

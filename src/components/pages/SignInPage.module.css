@@ -173,6 +173,7 @@ select {
 
 .aboutInputDiv img {
   margin-right: 10px;
+  margin-left: 10px;
 }
 .aboutInputDiv a {
   margin-left: auto;

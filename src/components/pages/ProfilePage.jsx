@@ -156,36 +156,59 @@ function ProfilePage() {
           <>
             <div className={style.aboutToping}>
               <h2 className={style.aboutHeading}>Interests</h2>
-              <InterestList>
-                {profile.userInfo.interest.map((interest, index) => (
-                  <InterestItem key={interest + index}>{interest}</InterestItem>
-                ))}
-              </InterestList>
+              {profile.userInfo.interest.length > 0 ? (
+                <InterestList>
+                  {profile.userInfo.interest.map((interest, index) => (
+                    <InterestItem key={interest + index}>
+                      {interest}
+                    </InterestItem>
+                  ))}
+                </InterestList>
+              ) : (
+                <p className={style.aboutMeText}>No interests added yet</p>
+              )}
             </div>
             <div className={style.aboutToping}>
               <h2 className={style.aboutHeading}>About Me</h2>
 
-              <p className={style.aboutMeText}>{profile.userInfo.aboutMe}</p>
+              <pre className={style.aboutMeText}>
+                {profile.userInfo.aboutMe ||
+                  `We don't know much about them, but we're sure ${profile.userInfo.firstName} is great.`}
+              </pre>
             </div>
           </>
         ) : tab === 'events' ? (
-          <EventListCol>
-            {profile.createdEvents.map((event) => (
-              <EventItemCol
-                event={event}
-                key={event._id}
-              />
-            ))}
-          </EventListCol>
+          profile.createdEvents.length > 0 ? (
+            <EventListCol>
+              {profile.createdEvents.map((event) => (
+                <EventItemCol
+                  event={event}
+                  key={event._id}
+                />
+              ))}
+            </EventListCol>
+          ) : (
+            <div className={style.noEvents}>
+              <h2>No Events here yet</h2>
+              <p>Come back later</p>
+            </div>
+          )
         ) : tab === 'reviews' ? (
-          <EventListCol>
-            {profile.reviews.map((review) => (
-              <ReviewItem
-                key={review._id}
-                review={review}
-              />
-            ))}
-          </EventListCol>
+          profile.reviews.length > 0 ? (
+            <EventListCol>
+              {profile.reviews.map((review) => (
+                <ReviewItem
+                  key={review._id}
+                  review={review}
+                />
+              ))}
+            </EventListCol>
+          ) : (
+            <div className={style.noEvents}>
+              <h2>No Reviews yet</h2>
+              <p>Maybe, leave him one ?</p>
+            </div>
+          )
         ) : (
           ''
         )}
